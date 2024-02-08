@@ -5,6 +5,7 @@ import net.minecraft.*;
 import net.xiaoyu233.fml.reload.event.HandleChatCommandEvent;
 import net.xiaoyu233.fml.reload.event.PacketRegisterEvent;
 import net.xiaoyu233.fml.reload.event.PlayerLoggedInEvent;
+import net.xiaoyu233.mitemod.miteite.MITEITEMod;
 import net.xiaoyu233.mitemod.miteite.item.ArmorModifierTypes;
 import net.xiaoyu233.mitemod.miteite.item.ToolModifierTypes;
 import net.xiaoyu233.mitemod.miteite.network.*;
@@ -381,6 +382,10 @@ public class MITEITEEvents {
                 commandListener.sendChatToPlayer(ChatMessage.createFromTranslationKey("command.sleep_check.msg").addText(notSleepingPlayers.substring(0, notSleepingPlayers.length() - 1)).setColor(EnumChatFormat.YELLOW));
             }
 
+            event.setExecuteSuccess(true);
+        }
+        if (par2Str.startsWith("check")) {
+            MITEITEMod.checkUpdateVer(player);
             event.setExecuteSuccess(true);
         }
 

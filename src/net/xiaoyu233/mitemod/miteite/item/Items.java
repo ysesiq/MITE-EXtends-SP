@@ -277,9 +277,11 @@ public class Items extends Item{
         register.registerShapedRecipe(new ItemStack(itemDynamicCoreInfinity, 1), true, new Object[]{"ABA", "BCB","ABA", 'A', Items.infinityingot, 'B', Blocks.glass, 'C', Items.itemDynamicCoreVibranium});
 
         register.registerShapelessRecipe(new ItemStack(Items.voucherClubCore, 1), true, Items.voucherFishing, Items.voucherVillager, Items.voucherPlanting);
-                register.registerShapelessRecipe(new ItemStack(voucherGoldBodyCore), true,Items.voucherVibraniumDoor,Items.voucherBedrock,Items.voucherGhast,Items.voucherSkeletonBoss);
+                register.registerShapelessRecipe(new ItemStack(voucherGoldBodyCore), true, Items.voucherVibraniumDoor, Items.voucherBedrock, Items.voucherGhast, Items.voucherSkeletonBoss);
         register.registerShapelessRecipe(new ItemStack(voucherAnnihilationSkeleton), true,
                 voucherDoor, voucherZombieLord, voucherWitch, voucherPigman, voucherExchanger);
+        register.registerShapelessRecipe(new ItemStack(voucherPigman), true,
+                voucherDoor, voucherZombieLord, voucherWitch, voucherAnnihilationSkeleton, voucherExchanger);
 
                 
 

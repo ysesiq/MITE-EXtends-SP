@@ -19,8 +19,6 @@ import java.util.Random;
 import java.awt.Color;
 import java.util.List;
 
-
-
 @Mixin(GuiIngame.class)
 public class GuiPlayerOverlayTrans extends avk {
    @Shadow

@@ -355,6 +355,16 @@ public class Blocks extends Block{
                 'C', coinVibranium,
                 'A', Blocks.anvilVibranium
         );
+        register.registerShapedRecipe(new ItemStack(fuDaoLe), true,
+                "GLZ",
+                "ACP",
+                'G', Items.voucherGoldBodyCore,
+                'L', Items.voucherClubCore,
+                'Z', Items.voucherZombieBoss,
+                'A', Items.voucherUltimateAnnihilation,
+                'C', Items.voucherCore,
+                'P', Items.voucherSpiderQueen
+        );
         registerForgingTableUpgradeRecipes(register,ForgingTableLevel.IRON,Item.ingotMithril);
         registerForgingTableUpgradeRecipes(register,ForgingTableLevel.MITHRIL,Item.ingotAdamantium);
         registerForgingTableUpgradeRecipes(register,ForgingTableLevel.ADAMANTIUM, VIBRANIUM_INGOT);

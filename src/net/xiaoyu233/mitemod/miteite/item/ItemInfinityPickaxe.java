@@ -9,7 +9,7 @@ import java.util.List;
 public class ItemInfinityPickaxe extends ItemPickaxe {
     protected ItemInfinityPickaxe(int par1) {
         super(par1, (Material) Materials.infinity);
-        this.addMaterialsEffectiveAgainst(new Material[]{Material.wood, Material.cloth, Material.pumpkin, Material.dirt, Material.web, Material.sand});
+        this.addMaterialsEffectiveAgainst(new Material[]{Material.wood, Material.cloth, Material.pumpkin, Material.dirt, Material.web, Material.sand, Material.mithril, Material.adamantium, Materials.vibranium, Material.tree_leaves, Material.grass, Material.glass});
         this.setReachBonus(300.0F);
     }
     @Override

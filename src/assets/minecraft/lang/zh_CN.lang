@@ -142,6 +142,7 @@ entity.EntityUltimateAnnihilationSkeleton.name=终湮骷髅
 entity.EntityZombieDoorWood.name=僵尸盗贼仆从
 entity.EntityZombieDoorDeep.name=僵尸盗贼
 entity.EntityZombieMiner.name=僵尸矿工
+entity.EntityAncientDragon.name=年
 
 gui.forgingTable.start=开始锻造
 gui.forgingTable.item_req=锻造需要
@@ -314,7 +315,7 @@ tile.anvil_infinity.slightlyDamaged.name=三岳之砧
 tile.anvil_infinity.veryDamaged.name=独岳之砧
 tile.block_infinity.name=无尽块
 
-item.china_fu.name=福?
+tile.china_fu.name=福块
 
 material.vibranium.name=振金
 material.enchant.name=附魔金属
