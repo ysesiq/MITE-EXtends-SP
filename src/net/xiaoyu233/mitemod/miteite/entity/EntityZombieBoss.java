@@ -9,7 +9,7 @@ import net.xiaoyu233.mitemod.miteite.util.Configs;
 
 import java.util.*;
 
-public class EntityZombieBoss extends EntityZombie {
+public class EntityZombieBoss extends EntityZombie implements IBossbarEntity {
     private Enchantment [] enhanceSpecialBookList = new Enchantment[] {Enchantment.protection, Enchantment.sharpness,  Enchantment.fortune, Enchantment.harvesting, Enchantments.EXTEND, Enchantment.efficiency, Enchantment.vampiric, Enchantment.butchering, Enchantment.featherFalling};
     private Enchantment [] nonLevelsBookList = new Enchantment[] {Enchantments.enchantmentFixed, Enchantments.enchantmentChain, Enchantments.EMERGENCY, Enchantments.EnchantmentForge};
     private int thunderTick = 0;

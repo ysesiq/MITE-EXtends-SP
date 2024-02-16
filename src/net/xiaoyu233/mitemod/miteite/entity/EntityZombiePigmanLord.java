@@ -4,6 +4,7 @@ import net.minecraft.*;
 import net.minecraft.server.MinecraftServer;
 import net.xiaoyu233.mitemod.miteite.item.Items;
 import net.xiaoyu233.mitemod.miteite.util.Configs;
+import net.xiaoyu233.mitemod.miteite.util.Constant;
 
 import java.util.Iterator;
 
@@ -21,7 +22,9 @@ public class EntityZombiePigmanLord extends EntityPigZombie {
     @Override
     public void addRandomEquipment() {
         int day = this.getWorld().getDayOfOverworld();
-        this.setCurrentItemOrArmor(0, new ItemStack(Items.VIBRANIUM_BATTLE_AXE, 1).randomizeForMob(this, day > 64));
+        Item [] itemList = new Item[] {Items.VIBRANIUM_SWORD, Items.VIBRANIUM_BATTLE_AXE, Items.VIBRANIUM_PICKAXE, Items.clubVibranium};
+        this.setCurrentItemOrArmor(0, (new ItemStack(itemList[Constant.GARandom.nextInt(itemList.length - 1)], 1)).randomizeForMob(this, true));
+//        this.setCurrentItemOrArmor(0, new ItemStack(Items.VIBRANIUM_BATTLE_AXE, 1).randomizeForMob(this, day > 64));
         this.setCurrentItemOrArmor(1, new ItemStack(Items.VIBRANIUM_HELMET, 1).randomizeForMob(this, day > 64));
         this.setCurrentItemOrArmor(2, new ItemStack(Items.VIBRANIUM_CHESTPLATE, 1).randomizeForMob(this, day > 64));
         this.setCurrentItemOrArmor(3, new ItemStack(Items.VIBRANIUM_LEGGINGS, 1).randomizeForMob(this, day > 64));

@@ -7,10 +7,26 @@ import net.xiaoyu233.mitemod.miteite.util.MonsterUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Mixin(EntityAncientBoneLord.class)
 public class EntityAncientBoneLordTrans extends EntityBoneLordTrans {
    public EntityAncientBoneLordTrans(World world) {
       super(world);
+   }
+
+   public void addRandomWeapon() {
+      List items = new ArrayList();
+      items.add(new RandomItemListEntry(Item.swordAncientMetal, 2));
+      items.add(new RandomItemListEntry(Items.clubAncientMetal, 2));
+      if (!Minecraft.isInTournamentMode()) {
+         items.add(new RandomItemListEntry(Item.battleAxeAncientMetal, 1));
+         items.add(new RandomItemListEntry(Item.warHammerAncientMetal, 1));
+      }
+
+      RandomItemListEntry entry = (RandomItemListEntry)WeightedRandom.getRandomItem(this.rand, items);
+      this.setHeldItemStack((new ItemStack(entry.item)).randomizeForMob(this, true));
    }
 
    @Overwrite

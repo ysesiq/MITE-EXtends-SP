@@ -4,7 +4,7 @@ import net.minecraft.*;
 
     public class RenderUltimateAnnihilationSkeleton extends bgu {
         public RenderUltimateAnnihilationSkeleton() {
-            super(new bbz(), 0.5F);
+            super(new bbz(), 0.8F);
         }
 
         protected boolean forceGlowOverride(){

@@ -7,6 +7,9 @@ import net.xiaoyu233.mitemod.miteite.util.MonsterUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Mixin(EntityBoneLord.class)
 public class EntityBoneLordTrans extends EntitySkeletonTrans {
    public EntityBoneLordTrans(World par1World) {
@@ -18,6 +21,22 @@ public class EntityBoneLordTrans extends EntitySkeletonTrans {
       if (recently_hit_by_player){
          this.dropItemStack(new ItemStack(Items.dyePowder, 5, 4));
       }
+   }
+
+   public void addRandomWeapon() {
+      List items = new ArrayList();
+      items.add(new RandomItemListEntry(Item.swordRustedIron, 2));
+      items.add(new RandomItemListEntry(Items.clubIron, 2));
+      if (this.worldObj.getDayOfWorld() >= 10 && !Minecraft.isInTournamentMode()) {
+         items.add(new RandomItemListEntry(Item.battleAxeRustedIron, 1));
+      }
+
+      if (this.worldObj.getDayOfWorld() >= 20 && !Minecraft.isInTournamentMode()) {
+         items.add(new RandomItemListEntry(Item.warHammerRustedIron, 1));
+      }
+
+      RandomItemListEntry entry = (RandomItemListEntry)WeightedRandom.getRandomItem(this.rand, items);
+      this.setHeldItemStack((new ItemStack(entry.item)).randomizeForMob(this, true));
    }
 
    @Overwrite

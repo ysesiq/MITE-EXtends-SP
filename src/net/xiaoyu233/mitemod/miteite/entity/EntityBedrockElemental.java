@@ -44,13 +44,19 @@ public class EntityBedrockElemental extends EntityEarthElemental {
     }
 
     @Override
+    public boolean isMagma() {
+            return false;
+    }
+
+    @Override
     public boolean isImmuneTo(DamageSource damage_source) {
         ItemStack item_stack = damage_source.getItemAttackedWith();
         boolean noNull = item_stack != null && item_stack.getItem() instanceof ItemTool;
         if (noNull && item_stack.itemID == Items.infinitySword.itemID ||
                 noNull && item_stack.itemID == Items.VIBRANIUM_WAR_HAMMER.itemID ||
                 noNull && item_stack.itemID == Items.VIBRANIUM_PICKAXE.itemID ||
-                noNull && item_stack.itemID == Items.enchantPickaxe.itemID) {
+                noNull && item_stack.itemID == Items.enchantPickaxe.itemID ||
+                noNull && item_stack.itemID == Items.infinityPickaxe.itemID) {
             return false;
         } else {
             return true;
@@ -115,6 +121,7 @@ public class EntityBedrockElemental extends EntityEarthElemental {
     public int getMaxSpawnedInChunk() {
         return 1;
     }
+
     public boolean canBeKnockedBack() {
         return false;
     }

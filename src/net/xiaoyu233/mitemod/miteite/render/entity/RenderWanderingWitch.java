@@ -8,7 +8,7 @@ public class RenderWanderingWitch extends bhv {
         this.setTexture(0, "textures/entity/wandering_witch");
     }
 
-    protected boolean forceGlowOverride(){
+    protected boolean forceGlowOverride() {
         return true;
     }
 }

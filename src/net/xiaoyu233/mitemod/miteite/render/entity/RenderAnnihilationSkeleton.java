@@ -7,7 +7,7 @@ public class RenderAnnihilationSkeleton extends bgu {
         super(new bbz(), 0.5F);
     }
 
-    protected boolean forceGlowOverride(){
+    protected boolean forceGlowOverride() {
         return true;
     }
 

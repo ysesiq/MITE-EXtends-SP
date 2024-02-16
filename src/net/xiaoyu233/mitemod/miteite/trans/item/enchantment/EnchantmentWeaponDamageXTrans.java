@@ -21,7 +21,7 @@ public abstract class EnchantmentWeaponDamageXTrans extends Enchantment {
             return false;
          // 亡灵杀手
          } else {
-            return item.getClass() == ItemWarHammer.class || (item.getHardestMetalMaterial() == Materials.vibranium && item instanceof ItemCudgel); // 这里是继承类，不能直接判==
+            return item.getClass() == ItemWarHammer.class || item.getClass() == ItemBattleAxe.class || (item.getHardestMetalMaterial() == Materials.vibranium && item instanceof ItemCudgel); // 这里是继承类，不能直接判==
          }
       } else {
          return item instanceof ItemSword || item.getClass() == ItemBattleAxe.class || item instanceof ItemScythe || item instanceof ItemCudgel;

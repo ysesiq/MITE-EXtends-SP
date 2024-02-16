@@ -36,21 +36,21 @@ public class BlockFu extends Blocks {
 //        return id == Blocks.getNextBlockID();
 //    }
 
-    public int dropBlockAsEntityItem(BlockBreakInfo info) {
-        this.dropXpOnBlockBreak(info.world, info.x, info.y, info.z, 15 + info.world.rand.nextInt(15) + info.world.rand.nextInt(15));
-        if (info.world.isTheEnd() && info.world.rand.nextFloat() < 100) {
-            EntityAncientDragon ancientDragon = new EntityAncientDragon(info.world);
-            ancientDragon.setPosition(info.x, info.y, info.z);
-            ancientDragon.refreshDespawnCounter(-9600);
-            if (info.getResponsiblePlayer() != null) {
-                ancientDragon.setAttackTarget(info.getResponsiblePlayer());
-            }
-            ancientDragon.entityFX(EnumEntityFX.summoned);
-            ancientDragon.onSpawnWithEgg(null);
-            info.world.spawnEntityInWorld(ancientDragon);
-            HasSpawnAncientDragon = true;
-        }
-
-        return 0;
-    }
+//    public int dropBlockAsEntityItem(BlockBreakInfo info) {
+//        this.dropXpOnBlockBreak(info.world, info.x, info.y, info.z, 15 + info.world.rand.nextInt(15) + info.world.rand.nextInt(15));
+//        if (info.world.isTheEnd() && info.world.rand.nextFloat() < 100) {
+//            EntityAncientDragon ancientDragon = new EntityAncientDragon(info.world);
+//            ancientDragon.setPosition(info.x, info.y, info.z);
+//            ancientDragon.refreshDespawnCounter(-9600);
+//            if (info.getResponsiblePlayer() != null) {
+//                ancientDragon.setAttackTarget(info.getResponsiblePlayer());
+//            }
+//            ancientDragon.entityFX(EnumEntityFX.summoned);
+//            ancientDragon.onSpawnWithEgg(null);
+//            info.world.spawnEntityInWorld(ancientDragon);
+//            HasSpawnAncientDragon = true;
+//        }
+//
+//        return 0;
+//    }
 }

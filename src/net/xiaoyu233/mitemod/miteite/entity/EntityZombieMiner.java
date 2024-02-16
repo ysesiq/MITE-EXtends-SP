@@ -67,6 +67,18 @@ public class EntityZombieMiner extends EntityZombie {
     }
 
     @Override
+    public boolean getCanSpawnHere(boolean perform_light_check) {
+//        boolean chanceSpawn = false;
+//        if (this.worldObj.isOverworld()) {
+//            chanceSpawn = this.rand.nextInt(100) < 33;
+//        }
+//        if (chanceSpawn) {
+                return super.getCanSpawnHere(perform_light_check) && this.worldObj.getDayOfOverworld() >= 10;
+//        }
+//        return false;
+    }
+
+    @Override
     public boolean canCatchFire() {
         return false;
     }

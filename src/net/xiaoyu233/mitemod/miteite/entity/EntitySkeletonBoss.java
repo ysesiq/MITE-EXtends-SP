@@ -11,7 +11,7 @@ import java.util.*;
 
 import static net.xiaoyu233.mitemod.miteite.item.GemModifierTypes.damage;
 
-public class EntitySkeletonBoss extends EntitySkeleton {
+public class EntitySkeletonBoss extends EntitySkeleton implements IBossbarEntity {
     private int max_num_evasions;
     private int num_evasions;
     private int spawnCounter;

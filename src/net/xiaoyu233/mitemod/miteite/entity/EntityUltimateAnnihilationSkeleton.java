@@ -6,7 +6,7 @@ import net.xiaoyu233.mitemod.miteite.item.Items;
 import net.xiaoyu233.mitemod.miteite.item.enchantment.Enchantments;
 import net.xiaoyu233.mitemod.miteite.util.Configs;
 
-public class EntityUltimateAnnihilationSkeleton extends EntitySkeleton {
+public class EntityUltimateAnnihilationSkeleton extends EntitySkeleton implements IBossbarEntity {
 //    private Enchantment[] enhanceSpecialBookList = new Enchantment[]{Enchantment.protection, Enchantment.sharpness, Enchantment.fortune, Enchantment.harvesting, Enchantments.EXTEND, Enchantment.efficiency, Enchantment.vampiric, Enchantment.butchering, Enchantment.featherFalling};
 //    private Enchantment[] nonLevelsBookList = new Enchantment[]{Enchantments.enchantmentFixed, Enchantments.enchantmentChain, Enchantments.EMERGENCY, Enchantments.EnchantmentForge};
     private boolean attackedByPlayer;
@@ -290,7 +290,7 @@ public class EntityUltimateAnnihilationSkeleton extends EntitySkeleton {
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
-        this.setEntityAttribute(GenericAttributes.maxHealth, 100);
+        this.setEntityAttribute(GenericAttributes.maxHealth, 1000);
         this.setEntityAttribute(GenericAttributes.attackDamage, 0.0F);
         this.setEntityAttribute(GenericAttributes.movementSpeed, 0.2992D);
     }

@@ -1,6 +1,7 @@
 package net.xiaoyu233.mitemod.miteite.item;
 import net.minecraft.*;
 import net.xiaoyu233.mitemod.miteite.util.ColorText;
+import net.xiaoyu233.mitemod.miteite.util.Configs;
 
 import java.util.List;
 
@@ -8,14 +9,6 @@ public class ItemFinalFood extends ItemFood {
     public ItemFinalFood(int par1) {
         super(par1, Material.chicken_soup, 200, 200, true, true, true, "drug_bg");
         this.setMaxStackSize(64);
-//        this.setPotionEffect(MobEffectList.field_76443_y.id, 6000, 1, 1.0F);
-//        //饱和  时间min  等级
-//        this.setPotionEffect(MobEffectList.field_76434_w.id, 6000, 5, 1.0F);
-//        //生命提升
-//        this.setPotionEffect(MobEffectList.regeneration.id, 6000, 1, 1.0F);
-//        this.setPotionEffect(MobEffectList.resistance.id, 6000, 255, 1.0F);
-//        this.setPotionEffect(MobEffectList.fireResistance.id, 6000, 1, 1.0F);
-
         this.setCraftingDifficultyAsComponent(1.0f);
         this.setCreativeTab(CreativeModeTab.tabFood);
     }
@@ -26,6 +19,10 @@ public class ItemFinalFood extends ItemFood {
 
     public boolean isHarmedByAcid() {
         return false;
+    }
+
+    public int getMaxItemUseDuration(ItemStack par1ItemStack) {
+        return ItemGoldenApple.isEnchantedGoldenApple(par1ItemStack) ? 10 : 10;
     }
 
     protected void onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {

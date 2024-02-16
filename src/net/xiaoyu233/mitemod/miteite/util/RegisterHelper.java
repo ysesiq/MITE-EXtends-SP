@@ -48,6 +48,7 @@ public class RegisterHelper {
         Items.silk.setSoldPrice(0.1D);
         Items.feather.setSoldPrice(0.1D);
         Items.flint.setSoldPrice(0.1D);
+        Items.netherStalkSeeds.setSoldPrice(0.1D);
         Items.redstone.setSoldPrice(1D);
         Items.coal.setSoldPrice(1D);
         Items.bone.setSoldPrice(1D);
@@ -87,7 +88,7 @@ public class RegisterHelper {
         Items.slimeBall.setSoldPrice(1D);
         Items.bread.setBuyPrice(0.2D).setSoldPrice(0.2D);
 
-        Items.netherQuartz.setBuyPrice(2D);
+//        Items.netherQuartz.setBuyPrice(2D);
 
         Items.getItem(Blocks.blockStairsColorful0.blockID).setBuyPrice(0.5D).setSoldPrice(0.5D);
         Items.getItem(Blocks.blockStairsColorful1.blockID).setBuyPrice(0.5D).setSoldPrice(0.5D);

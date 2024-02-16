@@ -4,8 +4,11 @@ import net.minecraft.*;
 import net.minecraft.server.MinecraftServer;
 import net.xiaoyu233.mitemod.miteite.item.Items;
 import net.xiaoyu233.mitemod.miteite.util.Configs;
+import net.xiaoyu233.mitemod.miteite.util.Constant;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class EntityZombieLord extends EntityZombie {
     private int fx_counter;
@@ -21,11 +24,11 @@ public class EntityZombieLord extends EntityZombie {
     @Override
     protected void addRandomEquipment() {
         int day = this.getWorld().getDayOfOverworld();
-        this.setCurrentItemOrArmor(0, (new ItemStack(Items.VIBRANIUM_SWORD, 1)).randomizeForMob(this, day > 64));
+        Item [] itemList = new Item[] {Items.VIBRANIUM_SWORD, Items.VIBRANIUM_BATTLE_AXE, Items.VIBRANIUM_WAR_HAMMER};
+        this.setCurrentItemOrArmor(0, (new ItemStack(itemList[Constant.GARandom.nextInt(itemList.length - 1)], 1)).randomizeForMob(this, true));
         this.setCurrentItemOrArmor(1, (new ItemStack(Items.VIBRANIUM_HELMET, 1)).randomizeForMob(this, day > 64));
         this.setCurrentItemOrArmor(2, (new ItemStack(Items.VIBRANIUM_CHESTPLATE, 1)).randomizeForMob(this, day > 64));
         this.setCurrentItemOrArmor(3, (new ItemStack(Items.VIBRANIUM_LEGGINGS, 1)).randomizeForMob(this, day > 64));
-        this.setCurrentItemOrArmor(4, (new ItemStack(Items.VIBRANIUM_BOOTS, 1)).randomizeForMob(this, day > 64));
         this.addPotionEffect(new MobEffect(1, 2147483647, 0));
         this.addPotionEffect(new MobEffect(5, 2147483647, 0));
     }
