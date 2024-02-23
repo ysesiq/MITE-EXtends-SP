@@ -1,6 +1,5 @@
 package net.xiaoyu233.mitemod.miteite.tileentity;
 
-import com.google.common.collect.Lists;
 import net.minecraft.*;
 import net.xiaoyu233.mitemod.miteite.block.BlockForgingTable;
 import net.xiaoyu233.mitemod.miteite.inventory.container.ForgingTableSlots;
@@ -10,7 +9,6 @@ import net.xiaoyu233.mitemod.miteite.item.recipe.IFaultFeedback;
 import net.xiaoyu233.mitemod.miteite.network.SPacketFinishForging;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class TileEntityForgingTable extends TileEntity implements IInventory {
     private String customName;
@@ -92,7 +90,6 @@ public class TileEntityForgingTable extends TileEntity implements IInventory {
                 this.slots.setToolItem(result);
             }
         }
-
         this.slots.updateSlots();
     }
 
@@ -135,7 +132,6 @@ public class TileEntityForgingTable extends TileEntity implements IInventory {
     @Override
     //removeItem
     public ItemStack getStackInSlotOnClosing(int par1) {
-//        System.out.println(this.items[].length);
         if (this.items[par1] != null) {
             ItemStack var2 = this.items[par1];
             this.items[par1] = null;

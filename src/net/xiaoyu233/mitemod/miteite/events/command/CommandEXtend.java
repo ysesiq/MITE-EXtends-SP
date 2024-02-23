@@ -1,7 +1,7 @@
 package net.xiaoyu233.mitemod.miteite.events.command;
 
 import net.minecraft.*;
-import net.xiaoyu233.mitemod.miteite.trans.item.ItemStackTrans;
+import net.xiaoyu233.mitemod.miteite.mixins.item.ItemStackTrans;
 
 import java.awt.*;
 import java.io.File;

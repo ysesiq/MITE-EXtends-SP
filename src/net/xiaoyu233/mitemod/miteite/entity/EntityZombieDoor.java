@@ -1,13 +1,9 @@
 package net.xiaoyu233.mitemod.miteite.entity;
 
 import net.minecraft.*;
-import net.minecraft.server.MinecraftServer;
 import net.xiaoyu233.mitemod.miteite.item.Items;
-import net.xiaoyu233.mitemod.miteite.trans.entity.ServerPlayerTrans;
 import net.xiaoyu233.mitemod.miteite.util.Configs;
 import net.xiaoyu233.mitemod.miteite.util.Constant;
-
-import java.util.Iterator;
 
 public class EntityZombieDoor extends EntityZombie {
     private int spawnCounter;

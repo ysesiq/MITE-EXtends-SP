@@ -4,8 +4,7 @@ import net.minecraft.AchievementList;
 import net.minecraft.BlockBreakInfo;
 import net.minecraft.DedicatedServer;
 import net.minecraft.Item;
-import net.xiaoyu233.mitemod.miteite.item.Items;
-import net.xiaoyu233.mitemod.miteite.trans.block.BlockGravelTrans;
+import net.xiaoyu233.mitemod.miteite.mixins.block.BlockGravelTrans;
 import net.xiaoyu233.mitemod.miteite.util.Configs;
 
 import java.util.Random;

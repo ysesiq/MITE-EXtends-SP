@@ -72,6 +72,10 @@ public class ContainerForgingTable extends Container {
         this.lastForgingTime = this.forgingTime;
     }
 
+//    private boolean tryMergeToolItemToSlot(ItemStack itemStack){
+//
+//    }
+
     void finishForging(SPacketFinishForging.Status finishStatus){
         this.player.sendPacket(new SPacketFinishForging(finishStatus));
         if (!this.world.isRemote){
@@ -212,13 +216,13 @@ public class ContainerForgingTable extends Container {
                     }
                 }
             }
-//
-//            if (itemstack1.isEmpty()) {
-//               slot.putStack(ItemStack.EMPTY);
-//            } else {
-//               slot.onSlotChanged();
-//            }
-
+/*
+            if (itemstack1.isEmpty()) {
+               slot.putStack(ItemStack.EMPTY);
+            } else {
+               slot.onSlotChanged();
+            }
+ */
             if (itemstack1.stackSize == 0) {
                 slot.putStack(null);/*putStack(ItemStack.EMPTY)*/
             } else {

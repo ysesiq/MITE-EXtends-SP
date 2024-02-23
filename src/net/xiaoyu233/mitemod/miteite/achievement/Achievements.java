@@ -6,7 +6,6 @@ import net.minecraft.Item;
 import net.minecraft.ItemStack;
 import net.xiaoyu233.mitemod.miteite.block.Blocks;
 import net.xiaoyu233.mitemod.miteite.item.Items;
-import net.xiaoyu233.mitemod.miteite.trans.entity.EntityBatTrans;
 import net.xiaoyu233.mitemod.miteite.util.Constant;
 
 public class Achievements {

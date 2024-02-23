@@ -1,14 +1,10 @@
 package net.xiaoyu233.mitemod.miteite.entity;
 
 import net.minecraft.*;
-import net.minecraft.server.MinecraftServer;
-import net.xiaoyu233.mitemod.miteite.item.ItemInfinitySword;
 import net.xiaoyu233.mitemod.miteite.item.Items;
-import net.xiaoyu233.mitemod.miteite.trans.item.ItemToolTrans;
 
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Random;
 
 public class EntityMirrorSkeleton extends EntitySkeleton {
     private boolean hasClonePlayer = false;

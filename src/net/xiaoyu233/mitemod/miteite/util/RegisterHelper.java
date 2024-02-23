@@ -5,7 +5,7 @@ import net.xiaoyu233.mitemod.miteite.achievement.Achievements;
 import net.xiaoyu233.mitemod.miteite.block.Blocks;
 import net.xiaoyu233.mitemod.miteite.item.Items;
 import net.xiaoyu233.mitemod.miteite.item.recipe.ForgingTableRecipes;
-import net.xiaoyu233.mitemod.miteite.trans.item.recipe.CraftingManagerInvoker;
+import net.xiaoyu233.mitemod.miteite.mixins.item.recipe.CraftingManagerInvoker;
 
 import java.util.ArrayList;
 import java.util.List;

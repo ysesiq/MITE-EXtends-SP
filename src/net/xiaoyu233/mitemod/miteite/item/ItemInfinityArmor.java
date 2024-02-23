@@ -74,7 +74,7 @@ public class ItemInfinityArmor extends ItemArmor {
         }
     }
     private float getEnhancedProtection(ItemStack itemStack) {
-        return (float)(itemStack.getEnhanceFactor() * (double)this.getRawProtection() * 0.68f + (double)((float)itemStack.getForgingGrade() / 3.0F)) * (0.2f);
+        return (float)(itemStack.getEnhanceFactor() * (double)this.getRawProtection() * 0.68f + (double)((float)itemStack.getForgingGrade() / 3.0F)) * (0.75f);
     }
     private float getRawProtection() {
         return (float)(this.getNumComponentsForDurability() * this.getMaterialProtection()) / 24.0F;

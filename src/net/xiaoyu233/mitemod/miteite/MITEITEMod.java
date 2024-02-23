@@ -10,14 +10,13 @@ import net.xiaoyu233.fml.classloading.Mod;
 import net.xiaoyu233.fml.config.InjectionConfig;
 import net.xiaoyu233.fml.util.ModInfo;
 import net.xiaoyu233.mitemod.miteite.events.EventListeners;
-import net.xiaoyu233.mitemod.miteite.trans.MinecraftTrans;
+import net.xiaoyu233.mitemod.miteite.mixins.MinecraftTrans;
 import net.xiaoyu233.mitemod.miteite.util.Configs;
 import net.xiaoyu233.mitemod.miteite.util.Constant;
 import org.spongepowered.asm.mixin.MixinEnvironment;
 
 import javax.annotation.Nonnull;
 import javax.swing.*;
-import java.io.File;
 
 @Mod
 public class MITEITEMod extends AbstractMod {

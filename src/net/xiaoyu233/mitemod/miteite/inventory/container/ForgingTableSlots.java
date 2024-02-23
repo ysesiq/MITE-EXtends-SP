@@ -2,11 +2,9 @@ package net.xiaoyu233.mitemod.miteite.inventory.container;
 
 import com.google.common.collect.Lists;
 import net.minecraft.*;
-import net.xiaoyu233.mitemod.miteite.item.ItemEnhanceStone;
 import net.xiaoyu233.mitemod.miteite.item.Items;
 import net.xiaoyu233.mitemod.miteite.item.recipe.ForgingRecipe;
 import net.xiaoyu233.mitemod.miteite.item.recipe.ForgingTableRecipes;
-import net.xiaoyu233.mitemod.miteite.item.enchantment.Enchantments;
 import net.xiaoyu233.mitemod.miteite.network.SPacketFinishForging;
 import net.xiaoyu233.mitemod.miteite.network.SPacketForgingTableInfo;
 import net.xiaoyu233.mitemod.miteite.tileentity.TileEntityForgingTable;
@@ -14,8 +12,6 @@ import net.xiaoyu233.mitemod.miteite.tileentity.TileEntityForgingTable;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
-
-import static net.xiaoyu233.mitemod.miteite.item.Items.UNIVERSAL_ENHANCE_STONE;
 
 public class ForgingTableSlots extends InventorySubcontainer {
     private final Slot up;
@@ -27,7 +23,6 @@ public class ForgingTableSlots extends InventorySubcontainer {
     private final Slot axe;
     private final Slot hammer;
     private final Slot output;
-//    private final Slot book;
     private ContainerForgingTable container;
     private final TileEntityForgingTable tileEntityForgingTable;
     public static final int slotSize = 9;
@@ -47,10 +42,6 @@ public class ForgingTableSlots extends InventorySubcontainer {
     public int getOutputIndex(){
         return 8;
     }
-
-//    public int getBookSlotIndex(){
-//        return 9;
-//    }
 
     public ForgingTableSlots(IInventory forgingTable) {
         super("ForgingTable",true,slotSize/*Size*/);
@@ -80,11 +71,6 @@ public class ForgingTableSlots extends InventorySubcontainer {
                 return false;
             }
         };
-//        this.book = new Slot(forgingTable, 9,69,6){
-//            public boolean isItemValid(ItemStack par1ItemStack) {
-//                return par1ItemStack.getItem().itemID == Items.UNIVERSAL_ENHANCE_STONE.itemID;
-//            }
-//        };
     }
 
     public Slot getUp() {
@@ -108,11 +94,11 @@ public class ForgingTableSlots extends InventorySubcontainer {
             for (ItemStack req : materialsRequired) {
                 if (current.getStack() != null && ItemStack.areItemStacksEqual(req, current.getStack(), true, false, false, true)) {
                     int resultSize = current.getStack().stackSize - req.stackSize;
-                        if (resultSize > 0) {
-                            current.getStack().setStackSize(resultSize);
-                        } else {
-                            current.putStack(null);
-                        }
+                    if (resultSize > 0) {
+                        current.getStack().setStackSize(resultSize);
+                    } else {
+                        current.putStack(null);
+                    }
                 }
             }
         }
@@ -121,7 +107,6 @@ public class ForgingTableSlots extends InventorySubcontainer {
 //    public boolean enhanceProtect(){
 //        return this.up.getStack().getItem().itemID == Items.UNIVERSAL_ENHANCE_STONE.itemID;
 //    }
-
 
     public void damageHammerAndAxe(int hammerDurabilityCost, int axeDurabilityCost) {
         this.hammer.putStack(this.damageItem(this.hammer.getStack(), hammerDurabilityCost));
@@ -140,32 +125,28 @@ public class ForgingTableSlots extends InventorySubcontainer {
     }
 
     public void writeToNBT(NBTTagCompound nbt) {
-       this.tryWriteSlotStack(nbt,this.up,"Up");
-       this.tryWriteSlotStack(nbt,this.left,"Left");
-       this.tryWriteSlotStack(nbt,this.right,"Right");
-       this.tryWriteSlotStack(nbt,this.downLeft,"DownLeft");
-       this.tryWriteSlotStack(nbt,this.downRight,"DownRight");
-       this.tryWriteSlotStack(nbt,this.tool,"Tool");
-       this.tryWriteSlotStack(nbt,this.axe,"Axe");
-       this.tryWriteSlotStack(nbt,this.hammer,"Hammer");
-       this.tryWriteSlotStack(nbt,this.output,"Output");
-//       this.tryWriteSlotStack(nbt,this.book,"Book");
+        this.tryWriteSlotStack(nbt,this.up,"Up");
+        this.tryWriteSlotStack(nbt,this.left,"Left");
+        this.tryWriteSlotStack(nbt,this.right,"Right");
+        this.tryWriteSlotStack(nbt,this.downLeft,"DownLeft");
+        this.tryWriteSlotStack(nbt,this.downRight,"DownRight");
+        this.tryWriteSlotStack(nbt,this.tool,"Tool");
+        this.tryWriteSlotStack(nbt,this.axe,"Axe");
+        this.tryWriteSlotStack(nbt,this.hammer,"Hammer");
+        this.tryWriteSlotStack(nbt,this.output,"Output");
     }
 
     public int getChanceOfFailure(@Nonnull ForgingRecipe recipe){
-        ItemStack axeItem;
         int bounceChanceFromTool = 0;
-        int enchantment = 0;
         ItemStack hammer = this.getHammerItem();
-        if (hammer != null) {
-            bounceChanceFromTool += Math.max((hammer.getMaterialForRepairs().getMinHarvestLevel() - Material.iron.getMinHarvestLevel()) * 3, 0);
-            enchantment += EnchantmentManager.getEnchantmentLevel((Enchantment)Enchantments.EnchantmentForge, hammer) * 2;
+        if (hammer != null){
+            bounceChanceFromTool += Math.max((hammer.getMaterialForRepairs().getMinHarvestLevel() - Material.iron.getMinHarvestLevel()) * 3,0);
         }
-        if ((axeItem = this.getAxeItem()) != null) {
-            bounceChanceFromTool += Math.max((axeItem.getMaterialForRepairs().getMinHarvestLevel() - Material.iron.getMinHarvestLevel()) * 2, 0);
-            enchantment += EnchantmentManager.getEnchantmentLevel((Enchantment) Enchantments.EnchantmentForge, axeItem) * 2;
+        ItemStack axeItem = this.getAxeItem();
+        if (axeItem != null) {
+            bounceChanceFromTool += Math.max((axeItem.getMaterialForRepairs().getMinHarvestLevel() - Material.iron.getMinHarvestLevel()) * 2,0);
         }
-        return recipe.getChanceOfFailure() - bounceChanceFromTool - enchantment;
+        return recipe.getChanceOfFailure() - bounceChanceFromTool;
     }
 
     public int getToolItemSlotIndex(){
@@ -325,7 +306,6 @@ public class ForgingTableSlots extends InventorySubcontainer {
         forgingTable.addSlot(axe);
         forgingTable.addSlot(hammer);
         forgingTable.addSlot(output);
-//        forgingTable.addSlot(book);
         if (this.tileEntityForgingTable != null){
             this.tileEntityForgingTable.openChest();
         }
@@ -349,7 +329,6 @@ public class ForgingTableSlots extends InventorySubcontainer {
         tileEntityForgingTable.setItem(this.getAxeSlotIndex(), ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("Axe")));
         tileEntityForgingTable.setItem(this.getHammerSlotIndex(), ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("Hammer")));
         tileEntityForgingTable.setItem(this.getOutputIndex(), ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("Output")));
-//        tileEntityForgingTable.setItem(9, ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("Book")));
     }
 
     public int getForgingTime(ForgingRecipe recipe) {
