@@ -3,6 +3,7 @@ package net.xiaoyu233.mitemod.miteite.inventory.container;
 import com.google.common.collect.Lists;
 import net.minecraft.*;
 import net.xiaoyu233.mitemod.miteite.item.Items;
+import net.xiaoyu233.mitemod.miteite.item.enchantment.Enchantments;
 import net.xiaoyu233.mitemod.miteite.item.recipe.ForgingRecipe;
 import net.xiaoyu233.mitemod.miteite.item.recipe.ForgingTableRecipes;
 import net.xiaoyu233.mitemod.miteite.network.SPacketFinishForging;
@@ -136,17 +137,20 @@ public class ForgingTableSlots extends InventorySubcontainer {
         this.tryWriteSlotStack(nbt,this.output,"Output");
     }
 
-    public int getChanceOfFailure(@Nonnull ForgingRecipe recipe){
+    public int getChanceOfFailure(@Nonnull ForgingRecipe recipe) {
+        ItemStack axeItem;
         int bounceChanceFromTool = 0;
+        int enchantment = 0;
         ItemStack hammer = this.getHammerItem();
-        if (hammer != null){
-            bounceChanceFromTool += Math.max((hammer.getMaterialForRepairs().getMinHarvestLevel() - Material.iron.getMinHarvestLevel()) * 3,0);
+        if (hammer != null) {
+            bounceChanceFromTool += Math.max((hammer.getMaterialForRepairs().getMinHarvestLevel() - Material.iron.getMinHarvestLevel()) * 3, 0);
+            enchantment += EnchantmentManager.getEnchantmentLevel((Enchantment)Enchantments.EnchantmentForge, (ItemStack)hammer) * 2;
         }
-        ItemStack axeItem = this.getAxeItem();
-        if (axeItem != null) {
-            bounceChanceFromTool += Math.max((axeItem.getMaterialForRepairs().getMinHarvestLevel() - Material.iron.getMinHarvestLevel()) * 2,0);
+        if ((axeItem = this.getAxeItem()) != null) {
+            bounceChanceFromTool += Math.max((axeItem.getMaterialForRepairs().getMinHarvestLevel() - Material.iron.getMinHarvestLevel()) * 2, 0);
+            enchantment += EnchantmentManager.getEnchantmentLevel((Enchantment) Enchantments.EnchantmentForge, (ItemStack)axeItem) * 2;
         }
-        return recipe.getChanceOfFailure() - bounceChanceFromTool;
+        return recipe.getChanceOfFailure() - bounceChanceFromTool - enchantment;
     }
 
     public int getToolItemSlotIndex(){
@@ -276,8 +280,12 @@ public class ForgingTableSlots extends InventorySubcontainer {
                 if (blockLevel >= recipe.getForgingTableLevelReq().getLevel()) {
                     if (this.hammer.getStack() != null) {
                         if (this.axe.getStack() != null) {
-                            if (this.getNeedItems(recipe).isEmpty()) {
-                                return recipe;
+                            if (this.up.getStack() != null) {
+                                if (this.getNeedItems(recipe).isEmpty()) {
+                                    return recipe;
+                                }
+                            } else {
+                                this.container.sendToolInfo(SPacketForgingTableInfo.ToolInfo.Tool.ITEM);
                             }
                         } else {
                             this.container.sendToolInfo(SPacketForgingTableInfo.ToolInfo.Tool.AXE);

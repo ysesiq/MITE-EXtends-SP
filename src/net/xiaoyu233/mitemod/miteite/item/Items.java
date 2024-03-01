@@ -114,7 +114,7 @@ public class Items extends Item{
     public static final Item spiderQueenSilk = new ItemSpiderQueenString(Constant.getNextItemID());
     public static final Item voucherSpiderQueen = new ItemMobVoucher(Constant.getNextItemID(), "spiderqueen");
     public static final ItemNugget infinityNugget = createInstance(ItemNugget.class, new Class[]{int.class,Material.class},Constant.getNextItemID(), Materials.infinity);
-    public static final ItemArrows arrowVibranium = new ItemArrows(Constant.getNextItemID(),Materials.vibranium);
+    public static final ItemArrow arrowVibranium = new ItemArrow(Constant.getNextItemID(),Materials.vibranium);
     public static final ItemEnhanceStone copper_enhance_stone = (ItemEnhanceStone) new ItemEnhanceStone(ItemEnhanceStone.Types.copper).setCraftingDifficultyAsComponent(ItemRock.getCraftingDifficultyAsComponent(Material.copper) * 2f);
     public static final Item clubEnchant = new ItemClubMetal(Constant.getNextItemID(),Materials.enchant);
     public static final Item itemDynamicCoreInfinity = new ItemDynamicCore(Constant.getNextItemID(), Materials.infinity, 32767).setUnlocalizedName("dynamic_core_infinity");

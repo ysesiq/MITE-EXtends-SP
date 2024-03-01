@@ -16,11 +16,11 @@ public class ForgingTableRecipes {
         RECIPES.put(key,forgingRecipe);
     };
 
-    public static ForgingRecipe getRecipe(Material toolItem, int forgingLevel){
+    public static ForgingRecipe getRecipe(Material toolItem, int forgingLevel) {
         return RECIPES.get(new RecipeKey(toolItem,forgingLevel));
     }
 
-    private static void registerThreeToSix(Material material, ForgingTableLevel level){
+    private static void registerThreeToSix(Material material, ForgingTableLevel level) {
         ForgingRecipe.Builder.of(material,4,level).
                 setChanceOfFailure(Items.MITHRIL_ENHANCE_STONE.getFailChance()).
                 setAxeDurabilityCost(4096).
@@ -64,32 +64,31 @@ public class ForgingTableRecipes {
     }
 
     public static void registerAll(){
-        //Iron Ancient metal Mithril
-        registerSilverZeroToTwoRecipes(Material.silver,ForgingTableLevel.IRON);
-        registerZeroToTwoRecipes(Material.iron,ForgingTableLevel.IRON);
-        registerZeroToTwoRecipes(Material.ancient_metal,ForgingTableLevel.MITHRIL);
-        registerZeroToFourRecipes(Material.mithril,ForgingTableLevel.MITHRIL);
-        //Vibranium
+        //Copper Silver Iron Ancient metal Mithril
+        registerSilverZeroToTwoRecipes(Material.silver, ForgingTableLevel.IRON);
+        registerSilverZeroToTwoRecipes(Material.copper, ForgingTableLevel.IRON);
+        registerZeroToTwoRecipes(Material.iron, ForgingTableLevel.IRON);
+        registerZeroToTwoRecipes(Material.ancient_metal, ForgingTableLevel.MITHRIL);
+        registerZeroToFourRecipes(Material.mithril, ForgingTableLevel.MITHRIL);
+        //Vibranium and Enchant
         {
-            registerZeroToThreeRecipes(Materials.vibranium,ForgingTableLevel.VIBRANIUM);
-            registerThreeToSix(Materials.vibranium,ForgingTableLevel.VIBRANIUM);
-            registerSevenToTen(Materials.vibranium,ForgingTableLevel.VIBRANIUM);
+            registerZeroToThreeRecipes(Materials.vibranium, ForgingTableLevel.VIBRANIUM);
+            registerThreeToSix(Materials.vibranium, ForgingTableLevel.VIBRANIUM);
+            registerSevenToTen(Materials.vibranium, ForgingTableLevel.VIBRANIUM);
 
-            registerZeroToThreeRecipes(Materials.enchant,ForgingTableLevel.VIBRANIUM);
-            registerThreeToSix(Materials.enchant,ForgingTableLevel.VIBRANIUM);
-            registerSevenToTen(Materials.enchant,ForgingTableLevel.VIBRANIUM);
-
-
-
+            registerZeroToThreeRecipes(Materials.enchant, ForgingTableLevel.VIBRANIUM);
+            registerThreeToSix(Materials.enchant, ForgingTableLevel.VIBRANIUM);
+//            registerSevenToTen(Materials.enchant, ForgingTableLevel.VIBRANIUM);
+            registerEnchantSevenToTen(Materials.enchant, ForgingTableLevel.VIBRANIUM);
         }
         //Adamantium
         {
-            registerZeroToThreeRecipes(Material.adamantium,ForgingTableLevel.ADAMANTIUM);
-            registerThreeToSix(Material.adamantium,ForgingTableLevel.ADAMANTIUM);
+            registerZeroToThreeRecipes(Material.adamantium, ForgingTableLevel.ADAMANTIUM);
+            registerThreeToSix(Material.adamantium, ForgingTableLevel.ADAMANTIUM);
         }
     }
 
-    private static void registerSevenToTen(Material material, ForgingTableLevel level){
+    private static void registerSevenToTen(Material material, ForgingTableLevel level) {
         ForgingRecipe.Builder.of(Materials.vibranium,7,ForgingTableLevel.VIBRANIUM).
                 setChanceOfFailure(Items.ADAMANTIUM_ENHANCE_STONE.getFailChance()).
                 setAxeDurabilityCost(6144).
@@ -130,6 +129,47 @@ public class ForgingTableRecipes {
                         new ItemStack(Items.ADAMANTIUM_ENHANCE_STONE,1)).
                 build(regiseterer);
     }
+    private static void registerEnchantSevenToTen(Material material, ForgingTableLevel level) {
+        ForgingRecipe.Builder.of(Materials.enchant,7,ForgingTableLevel.VIBRANIUM).
+                setChanceOfFailure(Items.ADAMANTIUM_ENHANCE_STONE.getFailChance()).
+                setAxeDurabilityCost(6144).
+                setHammerDurabilityCost(8192).
+                setTimeReq(90 * 20).
+                setQualityReward(EnumQuality.masterwork).
+                addFaultFeedback(DowngradeFeedback.of(1)).
+                addFaultFeedback(DurabilityFeedback.of(DurabilityFeedback.Type.ofPercentage(10))).
+                addMaterials(new ItemStack(Item.coinAdamantium,1),
+                        new ItemStack(Items.ingotAdamantium,1),
+                        new ItemStack(Item.ingotMithril,2),
+                        new ItemStack(Items.ADAMANTIUM_ENHANCE_STONE,1)).
+                build(regiseterer);
+        ForgingRecipe.Builder.of(Materials.enchant,8,ForgingTableLevel.VIBRANIUM).
+                setChanceOfFailure(Items.ADAMANTIUM_ENHANCE_STONE.getFailChance()).
+                setAxeDurabilityCost(8192).
+                setHammerDurabilityCost(10240).
+                setTimeReq(100 * 20).
+                setQualityReward(EnumQuality.masterwork).
+                addFaultFeedback(DowngradeFeedback.of(1)).
+                addFaultFeedback(DurabilityFeedback.of(DurabilityFeedback.Type.ofPercentage(10))).
+                addMaterials(new ItemStack(Item.coinAdamantium,2),
+                        new ItemStack(Items.ingotAdamantium,1),
+                        new ItemStack(Item.ingotMithril,2),
+                        new ItemStack(Items.ADAMANTIUM_ENHANCE_STONE,1)).
+                build(regiseterer);
+        ForgingRecipe.Builder.of(Materials.enchant,9,ForgingTableLevel.VIBRANIUM).
+                setChanceOfFailure(Items.ADAMANTIUM_ENHANCE_STONE.getFailChance()).
+                setAxeDurabilityCost(8192).
+                setHammerDurabilityCost(10240).
+                setTimeReq(110 * 20).
+                setQualityReward(EnumQuality.legendary).
+                addFaultFeedback(DowngradeFeedback.of(1)).
+                addFaultFeedback(DurabilityFeedback.of(DurabilityFeedback.Type.ofPercentage(10))).
+                addMaterials(new ItemStack(Item.coinAdamantium,2),
+                        new ItemStack(Items.ingotAdamantium,2),
+                        new ItemStack(Item.ingotMithril,2),
+                        new ItemStack(Items.ADAMANTIUM_ENHANCE_STONE,1)).
+                build(regiseterer);
+    }
     private static void registerZeroToFourRecipes(Material material,ForgingTableLevel level){
         registerZeroToThreeRecipes(material, level);
         ForgingRecipe.Builder.of(material,4,level).
@@ -147,7 +187,7 @@ public class ForgingTableRecipes {
                 build(regiseterer);
     }
 
-    public static void registerZeroToThreeRecipes(Material material, ForgingTableLevel level){
+    public static void registerZeroToThreeRecipes(Material material, ForgingTableLevel level) {
         registerZeroToTwoRecipes(material,level);
         ForgingRecipe.Builder.of(material,3,level).
                 //不为人知的bug
@@ -165,7 +205,7 @@ public class ForgingTableRecipes {
 
     }
 
-    private static void registerZeroToTwoRecipes(Material material, ForgingTableLevel level){
+    private static void registerZeroToTwoRecipes(Material material, ForgingTableLevel level) {
         ForgingRecipe.Builder.of(material,0,level).
                 setChanceOfFailure(Items.IRON_ENHANCE_STONE.getFailChance()).
                 setAxeDurabilityCost(2048).
@@ -199,7 +239,7 @@ public class ForgingTableRecipes {
                         new ItemStack(Items.IRON_ENHANCE_STONE,1)).
                 build(regiseterer);
     }
-    private static void registerSilverZeroToTwoRecipes(Material material, ForgingTableLevel level){
+    private static void registerSilverZeroToTwoRecipes(Material material, ForgingTableLevel level) {
         ForgingRecipe.Builder.of(material,0,level).
                 setChanceOfFailure(Items.copper_enhance_stone.getFailChance()).
                 setAxeDurabilityCost(1024).

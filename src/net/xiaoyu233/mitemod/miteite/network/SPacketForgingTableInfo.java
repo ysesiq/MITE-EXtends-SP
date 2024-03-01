@@ -410,6 +410,7 @@ public class SPacketForgingTableInfo extends Packet {
         public enum Tool {
             AXE("gui.forgingTable.needAxe"),
             HAMMER("gui.forgingTable.needHammer"),
+            ITEM("gui.forgingTable.needItem"),
             MAX_LEVEL("gui.forgingTable.max_level_or_not_found");
 
             private final String translationKey;

@@ -156,6 +156,7 @@ gui.forgingTable.hammerCost=战锤耐久消耗
 gui.forgingTable.needAxe=§l§o需要斧子
 gui.forgingTable.needHammer=§l§o需要战锤
 gui.forgingTable.max_level_or_not_found=工具已达到最大等级或无对应强化配方
+gui.forgingTable.needItem=§l§o顶上的格子需要放任意物品
 
 gui.forgingTable.levelToLow.iron=强化台等级过低,需要§n§7铁§r等级
 gui.forgingTable.levelToLow.ancient_metal=强化台等级过低,需要§n§g远古金属§r等级
@@ -293,7 +294,7 @@ item.avarice_meatballs.name=丸子
 item.ending.name=E N D I N G
 item.infinity_sword.name=攻伐之剑
 item.infinity_pickaxe.name=破妄之镐
-item.infinity_ingot.name=无尽锭
+item.infinity_ingot.name=无尽之锭
 item.infinity_nugget.name=无尽残片
 item.unassailable_chestplate.name=无懈可击之甲
 item.unassailable_helmet.name=精妙绝伦之胄

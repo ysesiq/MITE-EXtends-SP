@@ -68,8 +68,8 @@ public class Configs {
         public static ConfigItem <Boolean> underworldDebuff = new ConfigItem("underworldDebuff", true, "地下世界负面效果(开关)");
         public static ConfigItem <Integer> underworldDebuffPeriod1 = new ConfigItem("underworldDebuffPeriod1", 72000, "地下世界负面效果第一阶段触发时间(tick)", 0 ,1000000);
         public static ConfigItem <Integer> underworldDebuffPeriod2 = new ConfigItem("underworldDebuffPeriod2", 108000, "地下世界负面效果第二阶段触发时间(tick)", 0 ,1000000);
-        public static ConfigItem <Boolean>  netherrackDamage = new ConfigItem("netherrackDamage", true, "地狱烫脚(开关)");
-        public static ConfigItem <Integer> netherrackDamageLimitDay = new ConfigItem("netherrackDamageLimitDay", 96, "地狱烫脚所需天数(整数)", 0 ,500);
+        public static ConfigItem <Boolean>  netherrackDamage = new ConfigItem("netherrackDamage", true, "地狱岩烫脚(开关)");
+        public static ConfigItem <Integer> netherrackDamageLimitDay = new ConfigItem("netherrackDamageLimitDay", 96, "地狱岩烫脚所需天数(整数)", 0 ,500);
         public static ConfigItem <Boolean> netherDebuff = new ConfigItem("netherDebuff", true, "地狱负面效果(开关)");
         public static ConfigItem <Integer> netherDebuffTime = new ConfigItem("netherDebuffTime", 72000, "地狱负面效果触发时间(tick)", 0 ,1000000);
         public static ConfigItem <Integer> quartzMaxExpLevel = new ConfigItem("quartzMaxExpLevel", 55, "石英可提供经验最大等级", 0 ,1000);
@@ -165,6 +165,8 @@ public class Configs {
         public static ConfigItem <Double> skeletonBossBaseDamage = new ConfigItem("skeletonBossBaseDamage", 12d, "骷髅BOSS基础攻击伤害", 1d ,100d);
         public static ConfigItem <Float> skeletonBossSpawnPercent = new ConfigItem("skeletonBossSpawnPercent", 0.5f, "挖掘刷怪笼多大几率刷出骷髅BOSS", 0f,1f);
         public static ConfigItem <Boolean> isSkeletonandZombieSpawnBoth = new ConfigItem("isSkeletonandZombieSpawnBoth", true, "是否有机会在挖掘刷怪笼时同时生成多种boss");
+        public static ConfigItem <Boolean> debugGuiScreen = new ConfigItem("debugGuiScreen", true, "是否在DEV的情况下在屏幕左侧显示更多信息");
+        public static ConfigItem <Boolean> displayGAUI = new ConfigItem("displayGAUI", true, "是否启用地精坐标器");
 
 //        public static ConfigItem <String> md5String = new ConfigItem("md5String", new lh("wensc").a("busy"), "MD5");
 
@@ -294,13 +296,16 @@ public class Configs {
         wenscMap.put("zombieBossSpawnPercent", wenscConfig.zombieBossSpawnPercent);
         wenscMap.put("creeperFuseTime", wenscConfig.creeperFuseTime);
         wenscMap.put("skeletonRideBat", wenscConfig.skeletonRideBat);
+// EXtends-SP New Config
         wenscMap.put("BlnFinsh", wenscConfig.BlnFinsh);
         wenscMap.put("downPigZombieAttackDamage", wenscConfig.downPigZombieAttackDamage);
         wenscMap.put("hasBlockSpawnRecipe", wenscConfig.hasBlockSpawnRecipe);
-        wenscMap.put("skeletonBossMaxHealth",wenscConfig.skeletonBossMaxHealth);
-        wenscMap.put("skeletonBossBaseDamage",wenscConfig.skeletonBossBaseDamage);
-        wenscMap.put("skeletonBossSpawnPercent",wenscConfig.skeletonBossSpawnPercent);
-        wenscMap.put("isSkeletonandZombieSpawnBoth",wenscConfig.isSkeletonandZombieSpawnBoth);
+        wenscMap.put("skeletonBossMaxHealth", wenscConfig.skeletonBossMaxHealth);
+        wenscMap.put("skeletonBossBaseDamage", wenscConfig.skeletonBossBaseDamage);
+        wenscMap.put("skeletonBossSpawnPercent", wenscConfig.skeletonBossSpawnPercent);
+        wenscMap.put("isSkeletonandZombieSpawnBoth", wenscConfig.isSkeletonandZombieSpawnBoth);
+        wenscMap.put("debugGuiScreen",wenscConfig.debugGuiScreen);
+        wenscMap.put("displayGAUI",wenscConfig.displayGAUI);
 //        wenscMap.put("md5", wenscConfig.md5String);
 
         String filePth = "MITE-EXtends-SP.cfg";

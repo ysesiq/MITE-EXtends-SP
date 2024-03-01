@@ -19,7 +19,7 @@ public class EnchantmentCrit extends Enchantment {
 
     @Override
     public boolean canEnchantItem(Item item) {
-        return item instanceof ItemSword || item instanceof ItemCudgel;
+        return item instanceof ItemSword || item instanceof ItemCudgel || item instanceof ItemBattleAxe;
     }
 
     @Override

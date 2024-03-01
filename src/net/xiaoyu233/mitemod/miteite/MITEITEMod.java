@@ -20,7 +20,6 @@ import javax.swing.*;
 
 @Mod
 public class MITEITEMod extends AbstractMod {
-    // jar -cvf mite-extreme-v0.0.4.jar .
     private static final int MOD_LOADER_MIN_VER_NUM = 130;
     private static final String MOD_LOADER_MIN_VER_STRING = "v1.3.0";
     @Override
@@ -30,14 +29,14 @@ public class MITEITEMod extends AbstractMod {
     public static void checkUpdateVer(EntityPlayer player)  {
         String webVersion = HttpUtilities.performGetRequest("https://github.com/ysesiq/MITE-EXtends-SP/blob/master/Version.txt", 3000, 3000);
         if (webVersion == null){
-            player.sendChatToPlayer(ChatMessage.createFromText("[MITE-EXtends]:").setColor(EnumChatFormat.WHITE)
+            player.sendChatToPlayer(ChatMessage.createFromText("[MITE-EXtends-SP]:").setColor(EnumChatFormat.WHITE)
                     .appendComponent(ChatMessage.createFromText("无法检查更新")).setColor(EnumChatFormat.RED));
         } else {
             if (!Constant.MITE_ITE_VERSION.equals(webVersion)) {
-                player.sendChatToPlayer(ChatMessage.createFromText("[MITE-EXtends]: ").setColor(EnumChatFormat.WHITE)
+                player.sendChatToPlayer(ChatMessage.createFromText("[MITE-EXtends-SP]: ").setColor(EnumChatFormat.WHITE)
                         .appendComponent(ChatMessage.createFromText("有新版本可用,请到Modded MITE群或者Github Release中下载")).setColor(EnumChatFormat.GREEN));
             } else {
-                player.sendChatToPlayer(ChatMessage.createFromText("[MITE-EXtends]: ").setColor(EnumChatFormat.WHITE)
+                player.sendChatToPlayer(ChatMessage.createFromText("[MITE-EXtends-SP]: ").setColor(EnumChatFormat.WHITE)
                         .appendComponent(ChatMessage.createFromText("当前为最新版本")).setColor(EnumChatFormat.GREEN));
             }
         }

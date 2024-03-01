@@ -39,7 +39,7 @@ public class EntityUltimateAnnihilationSkeleton extends EntitySkeleton implement
         super(par1World);
         this.setHeldItemStack(weapon);
         if (par1World != null && this.onServer()) {
-            this.max_num_evasions = this.num_evasions = 8;
+            this.max_num_evasions = this.num_evasions = 16;
         }
     }
 
@@ -320,7 +320,7 @@ public class EntityUltimateAnnihilationSkeleton extends EntitySkeleton implement
     protected void dropFewItems(boolean recently_hit_by_player, DamageSource damage_source) {
         if (recently_hit_by_player){
             this.dropItem(Items.voucherUltimateAnnihilation);
-//            this.dropItemStack(new ItemStack(Items.VIBRANIUM_NUGGET,20));
+            this.dropItemStack(new ItemStack(Items.infinityNugget,1));
 //            this.dropItemStack(new ItemStack(Item.diamond,10));
 //            Enchantment dropEnchantment = enhanceSpecialBookList[rand.nextInt(enhanceSpecialBookList.length)];
         }

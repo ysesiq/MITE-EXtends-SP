@@ -31,7 +31,8 @@ public class EntitySkeletonBoss extends EntitySkeleton implements IBossbarEntity
     public EntitySkeletonBoss(World par1World) {
         super(par1World);
         if (par1World != null && this.onServer()) {
-            this.max_num_evasions = this.num_evasions = 8;
+            int rate = Math.min(200, worldObj.getDayOfOverworld()) / 10;
+            this.max_num_evasions = this.num_evasions = 8 + rate * 2;
         }
         this.tasks.addTask(1, new PathfinderGoalAvoidPlayer(this, EntityPlayer.class, 9.0F, 1.1, 1.4));
     }
@@ -54,7 +55,7 @@ public class EntitySkeletonBoss extends EntitySkeleton implements IBossbarEntity
         this.setEntityAttribute(GenericAttributes.followRange, 128.0);
         this.setEntityAttribute(GenericAttributes.movementSpeed, 0.3);
         this.setEntityAttribute(GenericAttributes.attackDamage, 15d + Configs.wenscConfig.skeletonBossBaseDamage.ConfigValue);
-        this.setEntityAttribute(GenericAttributes.maxHealth, Configs.wenscConfig.skeletonBossMaxHealth.ConfigValue + rate);
+        this.setEntityAttribute(GenericAttributes.maxHealth, Configs.wenscConfig.skeletonBossMaxHealth.ConfigValue + rate * 20);
     }
     protected void addRandomEquipment() {
         this.addRandomWeapon();
