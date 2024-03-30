@@ -43,6 +43,11 @@ public class EntityExchanger extends EntitySkeleton {
     }
 
     @Override
+    public int getMaxSpawnedInChunk() {
+        return 1;
+    }
+
+    @Override
     protected void dropFewItems(boolean recently_hit_by_player, DamageSource damage_source) {
         if (recently_hit_by_player){
             this.dropItem(Items.voucherExchanger);

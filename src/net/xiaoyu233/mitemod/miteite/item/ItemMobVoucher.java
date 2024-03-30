@@ -45,14 +45,14 @@ public class ItemMobVoucher extends Item {
                     break;
                 case "club_core":
                     info.add(EnumChatFormat.BROWN + Translator.getFormatted("振金棒合成材料之一", new Object[0]));
-                    info.add(EnumChatFormat.BLUE + Translator.getFormatted("垂钓凭证+村民凭证+种植凭证", new Object[0]));
+                    info.add(EnumChatFormat.BLUE + Translator.getFormatted("垂钓凭证+村民凭证+种植凭证合成", new Object[0]));
                     break;
                 case "voucher_zombieboss":
                     info.add(EnumChatFormat.BROWN + Translator.getFormatted( "攻伐之剑合成材料之一", new Object[0]));
                     info.add(EnumChatFormat.BLUE + Translator.getFormatted( "僵尸Boss掉落", new Object[0]));
                     break;
                 case "ghast":
-                    info.add(EnumChatFormat.BROWN + Translator.getFormatted("金身核心合成材料之一", new Object[0]));
+                    info.add(EnumChatFormat.BROWN + Translator.getFormatted("振金锭与金身核心合成材料之一", new Object[0]));
                     info.add(EnumChatFormat.BLUE + Translator.getFormatted("恶魂掉落", new Object[0]));
                     break;
                 case "bedrock":
@@ -76,7 +76,7 @@ public class ItemMobVoucher extends Item {
                     info.add(EnumChatFormat.BLUE + Translator.getFormatted("终湮骷髅掉落", new Object[0]));
                     break;
                 case "spiderqueen":
-                    info.add(EnumChatFormat.BROWN + Translator.getFormatted("???合成材料之一", new Object[0]));
+                    info.add(EnumChatFormat.BROWN + Translator.getFormatted("振金锭合成材料之一", new Object[0]));
                     info.add(EnumChatFormat.BLUE + Translator.getFormatted("蛛后掉落", new Object[0]));
                     break;
                 default:

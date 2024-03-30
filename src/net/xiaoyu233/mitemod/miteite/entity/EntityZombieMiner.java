@@ -39,8 +39,8 @@ public class EntityZombieMiner extends EntityZombie {
         double x = day / 7 - 7;
         double rate = (0.5 + x / (20 + Math.abs(x)));
         int healthRate = Math.min(day / 16, 10);
-        this.setEntityAttribute(GenericAttributes.attackDamage, 12.0D + (double) day / 24.0D);
-        this.setEntityAttribute(GenericAttributes.maxHealth, rate * 60 + healthRate * 15);
+        this.setEntityAttribute(GenericAttributes.attackDamage, 8.0D + (double) day / 16.0D);
+        this.setEntityAttribute(GenericAttributes.maxHealth, rate * 50 + healthRate * 10);
         this.setEntityAttribute(GenericAttributes.movementSpeed, 0.3D);
     }
 
@@ -57,7 +57,7 @@ public class EntityZombieMiner extends EntityZombie {
     @Override
     protected void dropFewItems(boolean recently_hit_by_player, DamageSource damage_source) {
         if (recently_hit_by_player) {
-//            this.dropItem(Items.voucherZombieLord);
+            this.dropItem(Items.voucherZombieMiner);
             int day = this.getWorld().getDayOfOverworld();
             int diamond_count = (day / 32) >= 3 ? 3 : ((day / 32) + 1);
             for (int i1 = 0; i1 < diamond_count; i1++) {
@@ -68,14 +68,7 @@ public class EntityZombieMiner extends EntityZombie {
 
     @Override
     public boolean getCanSpawnHere(boolean perform_light_check) {
-//        boolean chanceSpawn = false;
-//        if (this.worldObj.isOverworld()) {
-//            chanceSpawn = this.rand.nextInt(100) < 33;
-//        }
-//        if (chanceSpawn) {
-                return super.getCanSpawnHere(perform_light_check) && this.worldObj.getDayOfOverworld() >= 10;
-//        }
-//        return false;
+        return super.getCanSpawnHere(perform_light_check) && this.worldObj.getDayOfOverworld() >= 10;
     }
 
     @Override

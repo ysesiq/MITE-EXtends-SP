@@ -213,6 +213,7 @@ item.voucher_goldbody_core.name=金身核心
 item.voucher_skeletonboss.name=骷髅boss凭证
 item.voucher_ultimateannihilation.name=终湮骷髅凭证
 item.voucher_spiderqueen.name=蛛后凭证
+item.voucher_zombieminer.name=僵尸矿工凭证
 
 tile.fancy_red.name=红钻矿石
 item.fancy_red.name=红钻

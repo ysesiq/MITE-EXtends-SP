@@ -37,6 +37,11 @@ public class EntityMirrorSkeleton extends EntitySkeleton {
 
     }
 
+    @Override
+    public int getMaxSpawnedInChunk() {
+        return 1;
+    }
+
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         int day = this.getWorld().getDayOfOverworld();

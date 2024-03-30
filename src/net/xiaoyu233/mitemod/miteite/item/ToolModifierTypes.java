@@ -59,7 +59,7 @@ public enum ToolModifierTypes implements ItemModifierTypes{
 
     public static boolean isWeapon(ItemStack stack) {
         Item item = stack.getItem();
-        return item instanceof ItemSword || item instanceof ItemBattleAxe || item instanceof ItemWarHammer || item instanceof ItemCudgel;
+        return item instanceof ItemSword || item instanceof ItemBattleAxe || item instanceof ItemWarHammer || item instanceof ItemCudgel|| item instanceof ItemInfinitySword;
     }
 
     @Override
@@ -99,8 +99,8 @@ public enum ToolModifierTypes implements ItemModifierTypes{
     public int getMaxLevel() {
         return maxLevel;
     }
-    
-    //    private static boolean hasNotOtherMiningModifier(ItemStack stack,int MiningType){
+
+//    private static boolean hasNotOtherMiningModifier(ItemStack stack,int MiningType){
 //        switch (MiningType){
 //            case 0:
 //                return !ItemModifierTypes.hasModifier(stack, MELTING);

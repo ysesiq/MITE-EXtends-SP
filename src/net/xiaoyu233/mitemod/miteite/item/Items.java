@@ -125,6 +125,8 @@ public class Items extends Item{
     public static final ItemInfinityPickaxe infinityPickaxe = new ItemInfinityPickaxe(Constant.getNextItemID());
     public static final Item clubGold = new ItemClubMetal(Constant.getNextItemID(),Material.gold);
     public static final ItemFinalFood AvariceMeatBalls = new ItemFinalFood(Constant.getNextItemID());
+    public static final Item voucherZombieMiner = new ItemMobVoucher(Constant.getNextItemID(), "zombieminer");
+
 
     private static Item register(String resourceLocation, Item item, CreativeModeTab tab) {
         item.setResourceLocation(item.getResourceLocationPrefix() + resourceLocation);
@@ -211,6 +213,7 @@ public class Items extends Item{
         register("voucher/voucher_ultimateannihilation", voucherUltimateAnnihilation).setUnlocalizedName("voucher_ultimateannihilation").setLowestCraftingDifficultyToProduce(1.0F);
         register("voucher/voucher_skeletonboss", voucherSkeletonBoss).setUnlocalizedName("voucher_skeletonboss").setLowestCraftingDifficultyToProduce(1.0F);
         register("voucher/voucher_spider_queen", voucherSpiderQueen).setUnlocalizedName("voucher_spiderqueen").setLowestCraftingDifficultyToProduce(1.0F);
+        register("voucher/voucher_zombie_miner", voucherZombieMiner).setUnlocalizedName("voucher_zombieminer").setLowestCraftingDifficultyToProduce(1.0F);
 
         register("dynamic_core/dynamic_core_1", itemDynamicCoreIron).setUnlocalizedName("dynamic_core_iron").setLowestCraftingDifficultyToProduce(1.0F);
         register("dynamic_core/dynamic_core_2", itemDynamicCoreAncient_metal).setUnlocalizedName("dynamic_core_ancient_metal").setLowestCraftingDifficultyToProduce(1.0F);
@@ -258,7 +261,7 @@ public class Items extends Item{
         }
 
         register.registerShapelessRecipe(new ItemStack(Blocks.blockLantern, 1), true,Blocks.torchWood, ironNugget, ironNugget, ironNugget, ironNugget, ironNugget, ironNugget, ironNugget, ironNugget);
-        register.registerShapelessRecipe(new ItemStack(Items.voucherCore, 1), true, Items.voucherAnnihilationSkeleton, Items.voucherDoor, Items.voucherExchanger, Items.voucherPigman, Items.voucherZombieLord, Items.voucherWitch);
+        register.registerShapelessRecipe(new ItemStack(Items.voucherCore, 1), true, Items.voucherAnnihilationSkeleton, Items.voucherDoor, Items.voucherExchanger, Items.voucherPigman, Items.voucherZombieLord, Items.voucherWitch, Items.voucherGhast, Items.voucherZombieMiner, Items.voucherSpiderQueen);
         register.registerShapedRecipe(new ItemStack(clubCopper, 1), true, new Object[]{"###", "#*#"," # ", '#', Items.copperNugget , '*', Items.ingotCopper});
         register.registerShapedRecipe(new ItemStack(clubSilver, 1), true, new Object[]{"###", "#*#"," # ", '#', Items.silverNugget , '*', Items.ingotSilver});
         register.registerShapedRecipe(new ItemStack(clubGold, 1), true, new Object[]{"###", "#*#"," # ", '#', Items.goldNugget , '*', Items.ingotGold});
@@ -312,7 +315,7 @@ public class Items extends Item{
             register.registerShapedRecipe(new ItemStack(ringKillerMithril, 1), true, new Object[]{"###", "#*#","###", '#', Items.swordMithril , '*', Items.ringKillerAncient});
             register.registerShapedRecipe(new ItemStack(ringKillerAdamantium, 1), true, new Object[]{"###", "#*#","###", '#', Items.swordAdamantium , '*', Items.ringKillerMithril});
             register.registerShapedRecipe(new ItemStack(ringKillerVibranium, 1), true, new Object[]{"###", "#*#","###", '#', VIBRANIUM_SWORD , '*', Items.ringKillerAdamantium});
-            register.registerShapedRecipe(new ItemStack(ringKillerInfinity, 1), true, new Object[]{"###", "#*#","###", '#', infinitySword, '*', Items.ringKillerVibranium});
+            register.registerShapedRecipe(new ItemStack(ringKillerInfinity, 1), true, new Object[]{"#U#", "#*#","###", '#', infinitySword, '*', Items.ringKillerVibranium, 'U', Items.voucherUltimateAnnihilation});
         }
 
         for(int i =0; i < GemModifierTypes.values().length; i++) {
@@ -517,11 +520,14 @@ public class Items extends Item{
                 'E', Item.enderPearl);
         register.registerShapedRecipe(new ItemStack(infinitySword),
                 true,
-                "D",
-                "D",
-                "E",
+                "CDC",
+                "SDS",
+                "BEB",
                 'E', enchantStick,
-                'D', infinityingot);
+                'D', infinityingot,
+                'B', Blocks.blockVibranium,
+                'C', coinVibranium,
+                'S', VIBRANIUM_SWORD);
 
         register.registerShapedRecipe(new ItemStack(infinityPickaxe),
                 true,
