@@ -30,7 +30,7 @@ public class ItemInfinitySword extends ItemSword {
     @Override
     public float getBaseDamageVsEntity() {
         if (Type == 0) {
-            return 2147483647.0F;
+            return Integer.MAX_VALUE / 20;
         } else {
             return Float.MAX_VALUE;
         }

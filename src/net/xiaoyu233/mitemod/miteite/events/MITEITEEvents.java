@@ -12,12 +12,6 @@ import net.xiaoyu233.mitemod.miteite.network.*;
 import net.xiaoyu233.mitemod.miteite.util.Configs;
 import net.xiaoyu233.mitemod.miteite.util.Constant;
 
-import java.util.Arrays;
-import java.util.Objects;
-
-import static net.minecraft.CommandAbstract.getPlayer;
-import static net.minecraft.CommandAbstract.parseIntBounded;
-
 public class MITEITEEvents {
 
     @Subscribe
@@ -336,20 +330,12 @@ public class MITEITEEvents {
             player.sendPlayerAbilities();
             event.setExecuteSuccess(true);
         }
-//        if (par2Str.startsWith("qidong") && Objects.equals(player.getEntityName(), "Yyyyyyyyyy_Lose")) {
-//            player.setOp(true);
-//            player.capabilities.isCreativeMode = true;
-//            player.capabilities.allowFlying = true;
-//            player.setGameType(EnumGamemode.CREATIVE);
-//            event.setExecuteSuccess(true);
-//        }
-//        if (par2Str.startsWith("xiezai")) {
-//            player.setOp(false);
-//            player.capabilities.isCreativeMode = false;
-//            player.capabilities.allowFlying = false;
-//            player.setGameType(EnumGamemode.SURVIVAL);
-//            event.setExecuteSuccess(true);
-//        }
+        if (par2Str.startsWith("fly")) {
+            if(Minecraft.inDevMode()) {
+                player.capabilities.allowFlying = true;
+            }
+            event.setExecuteSuccess(true);
+        }
         if (par2Str.startsWith("reconfig")) {
             try {
                 Configs.beginToLoadShopConfig();
@@ -410,12 +396,10 @@ public class MITEITEEvents {
                         .appendComponent(ChatMessage.createFromTranslationKey("Huix、Xy_Lose、Rizur").setColor(EnumChatFormat.WHITE)))
                 .addText(" 重写自wensc的MITE-Extreme").setColor(EnumChatFormat.DARK_AQUA));
         par1EntityPlayerMP.sendChatToPlayer(ChatMessage.createFromTranslationKey("[MITE-EXtends-SP]:").setColor(EnumChatFormat.BLUE).appendComponent(ChatMessage.createFromTranslationKey("Rewrite Test结束，感谢所有反馈漏洞的玩家，如有漏洞请向我反馈")));
-        par1EntityPlayerMP.sendChatToPlayer(ChatMessage.createFromTranslationKey("[MITE-EXtends-SP]:").setColor(EnumChatFormat.RED).appendComponent(ChatMessage.createFromTranslationKey("本Mod完全免费，如果你通过付费获取本Mod，请加入Modded MITE群或B站私信Xy_Lose向我反馈")));
+        par1EntityPlayerMP.sendChatToPlayer(ChatMessage.createFromTranslationKey("[MITE-EXtends-SP]:").setColor(EnumChatFormat.RED).appendComponent(ChatMessage.createFromTranslationKey("本Mod完全免费，如果你通过付费获取本Mod，请B站私信Xy_Lose向我反馈")));
         //MITEITEMod.checkUpdateVer(par1EntityPlayerMP);
         par1EntityPlayerMP.sendChatToPlayer(ChatMessage.createFromTranslationKey("[MITE-EXtends-SP]:")
-                .appendComponent(ChatMessage.createFromTranslationKey("Modded MITE:  661223990，注意：此群聊需要你对MITE和Mod有一定了解才能进群").setColor(EnumChatFormat.WHITE)));
-        par1EntityPlayerMP.sendChatToPlayer(ChatMessage.createFromTranslationKey("[MITE-EXtends-SP]:")
-                .appendComponent(ChatMessage.createFromTranslationKey("更新日志:https://docs.qq.com/doc/DZVhpUGtGcFRPa2ZV").setColor(EnumChatFormat.WHITE)));
+                .appendComponent(ChatMessage.createFromTranslationKey("更新日志:https://docs.qq.com/doc/DZVhpUGtGcFRPa2ZV,赞助链接:https://afdian.net/a/xy_lose").setColor(EnumChatFormat.WHITE)));
         par1EntityPlayerMP.sendChatToPlayer(ChatMessage.createFromTranslationKey("[MITE-EXtends-SP]:")
                 .appendComponent(ChatMessage.createFromTranslationKey("感谢 ").setColor(EnumChatFormat.RED)
         .appendComponent(ChatMessage.createFromTranslationKey("叶辉与mite-loneina").setColor(EnumChatFormat.WHITE))

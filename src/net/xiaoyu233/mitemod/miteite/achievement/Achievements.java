@@ -26,6 +26,8 @@ public class Achievements {
     public static Achievement fishFortune;
     
     public static Achievement infinitySword;
+    public static Achievement UAKiller;
+
     public static void registerAchievements(){
         vibraniumIngot = new Achievement(getNextAchievementID(),"vibraniumIngot",-2,17, Items.VIBRANIUM_INGOT, AchievementList.adamantiumIngot).registerAchievement();
         wearAllVibraniumPlateArmor = new Achievement(getNextAchievementID(),"vibraniumArmor",12,1,Items.VIBRANIUM_CHESTPLATE,AchievementList.wearAllAdamantiumPlateArmor).setSpecial().registerAchievement();
@@ -41,7 +43,9 @@ public class Achievements {
         itemDynamicCoreIron = new Achievement(getNextAchievementID(),"itemDynamicCoreIron",3,3, Items.itemDynamicCoreIron, AchievementList.acquireIron).registerAchievement();
         killZombieBoss = new Achievement(getNextAchievementID(),"killZombieBoss",0,11, Items.VIBRANIUM_WAR_HAMMER, AchievementList.portal).registerAchievement();
         
-        infinitySword = new Achievement(getNextAchievementID(),"infinitySword",0,19,Items.infinitySword,infinitySword).setSpecial().registerAchievement();
+        infinitySword = new Achievement(getNextAchievementID(),"infinitySword",0,19,Items.infinitySword, vibraniumAnvil).setSpecial().registerAchievement();
+        UAKiller = new Achievement(getNextAchievementID(),"UAKiller",0,21,Items.voucherUltimateAnnihilation, infinitySword).setSpecial().registerAchievement();
+
     }
     private static int getNextAchievementID(){
         return Constant.nextAchievementID++;

@@ -23,6 +23,6 @@ public class ItemClubMetal extends ItemCudgel {
     }
 
     public int getNumComponentsForDurability() {
-        return 2;
+        return (int) 1.5;
     }
 }

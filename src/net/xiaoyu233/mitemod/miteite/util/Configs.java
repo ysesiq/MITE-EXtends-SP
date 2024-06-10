@@ -39,7 +39,7 @@ public class Configs {
     }
 
     public static class wenscConfig {
-        public static ConfigItem <Boolean> BlnGravel = new ConfigItem("BlnGravel", true, "是否增加燧石概率");
+        public static ConfigItem <Boolean> BlnGravel = new ConfigItem("BlnGravel", true, "是否增加沙砾爆率");
         public static ConfigItem <Boolean> isOpenStrongBoxBreakRecord = new ConfigItem("isOpenStrongBoxBreakRecord", true, "是否开启私人箱子破坏记录");
         public static ConfigItem <Boolean> isRecipeGATorch = new ConfigItem("isRecipeGATorch", true, "是否有一捆火把配方");
         public static ConfigItem <Boolean> isRecipeRingKiller = new ConfigItem("isRecipeRingKiller", true, "是否有魔灵刃配方");
@@ -165,8 +165,9 @@ public class Configs {
         public static ConfigItem <Double> skeletonBossBaseDamage = new ConfigItem("skeletonBossBaseDamage", 12d, "骷髅BOSS基础攻击伤害", 1d ,100d);
         public static ConfigItem <Float> skeletonBossSpawnPercent = new ConfigItem("skeletonBossSpawnPercent", 0.5f, "挖掘刷怪笼多大几率刷出骷髅BOSS", 0f,1f);
         public static ConfigItem <Boolean> isSkeletonandZombieSpawnBoth = new ConfigItem("isSkeletonandZombieSpawnBoth", true, "是否有机会在挖掘刷怪笼时同时生成多种boss");
-        public static ConfigItem <Boolean> debugGuiScreen = new ConfigItem("debugGuiScreen", true, "是否在DEV的情况下在屏幕左侧显示更多信息");
+//        public static ConfigItem <Boolean> debugGuiScreen = new ConfigItem("debugGuiScreen", true, "是否在DEV的情况下在屏幕左侧显示更多信息");
         public static ConfigItem <Boolean> displayGAUI = new ConfigItem("displayGAUI", true, "是否启用地精坐标器");
+        public static ConfigItem <Boolean> superGravel = new ConfigItem("SuperGravel", true, "是否启用超级沙砾爆率(未完成)");
 
 //        public static ConfigItem <String> md5String = new ConfigItem("md5String", new lh("wensc").a("busy"), "MD5");
 
@@ -304,8 +305,9 @@ public class Configs {
         wenscMap.put("skeletonBossBaseDamage", wenscConfig.skeletonBossBaseDamage);
         wenscMap.put("skeletonBossSpawnPercent", wenscConfig.skeletonBossSpawnPercent);
         wenscMap.put("isSkeletonandZombieSpawnBoth", wenscConfig.isSkeletonandZombieSpawnBoth);
-        wenscMap.put("debugGuiScreen",wenscConfig.debugGuiScreen);
-        wenscMap.put("displayGAUI",wenscConfig.displayGAUI);
+//        wenscMap.put("debugGuiScreen", wenscConfig.debugGuiScreen);
+        wenscMap.put("displayGAUI", wenscConfig.displayGAUI);
+        wenscMap.put("superGravel", wenscConfig.superGravel);
 //        wenscMap.put("md5", wenscConfig.md5String);
 
         String filePth = "MITE-EXtends-SP.cfg";

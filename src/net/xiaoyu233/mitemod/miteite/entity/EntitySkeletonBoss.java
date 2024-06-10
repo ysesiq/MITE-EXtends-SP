@@ -65,7 +65,7 @@ public class EntitySkeletonBoss extends EntitySkeleton implements IBossbarEntity
         this.setHelmet((new ItemStack(Items.VIBRANIUM_HELMET)).randomizeForMob(this, true));
     }
 
-    public void onUpdate(){
+    public void onUpdate() {
         super.onUpdate();
         if(!getWorld().isRemote){
             spawnCounter++;

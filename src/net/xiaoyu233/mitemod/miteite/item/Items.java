@@ -1,6 +1,8 @@
 package net.xiaoyu233.mitemod.miteite.item;
 
 import net.minecraft.*;
+import net.xiaoyu233.mitemod.miteite.block.BlockColorfulDoubleSlab;
+import net.xiaoyu233.mitemod.miteite.block.BlockColorfulSlab;
 import net.xiaoyu233.mitemod.miteite.block.Blocks;
 import net.xiaoyu233.mitemod.miteite.util.Configs;
 import net.xiaoyu233.mitemod.miteite.util.Constant;
@@ -126,7 +128,6 @@ public class Items extends Item{
     public static final Item clubGold = new ItemClubMetal(Constant.getNextItemID(),Material.gold);
     public static final ItemFinalFood AvariceMeatBalls = new ItemFinalFood(Constant.getNextItemID());
     public static final Item voucherZombieMiner = new ItemMobVoucher(Constant.getNextItemID(), "zombieminer");
-
 
     private static Item register(String resourceLocation, Item item, CreativeModeTab tab) {
         item.setResourceLocation(item.getResourceLocationPrefix() + resourceLocation);

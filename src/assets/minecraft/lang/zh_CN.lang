@@ -111,6 +111,8 @@ achievement.killZombieBoss=立于不败之地
 achievement.killZombieBoss.desc=BOSS会掉落各种附魔书以及钻石
 achievement.infinitySword=无敌了？不，才刚刚起步罢了
 achievement.infinitySword.desc=制作出你的第一个神器：攻伐之剑
+achievement.UAKiller=不过尔尔
+achievement.UAKiller.desc=击败烈焰人刷怪笼中封印的最终Boss:终湮骷髅
 
 commands.version.playing=你现在正在游玩
 commands.day.msg=今天是这个世界的第 %s 天
@@ -196,7 +198,7 @@ item.dynamic_core_infinity.name=永恒之火
 
 item.voucher_core.name=振金核心
 item.voucher_witch.name=流浪女巫,末影人凭证
-item.voucher_pigman.name=猪人凭证
+item.voucher_pigman.name=猪人领主凭证
 item.voucher_annihilation_skeleton.name=湮灭骷髅,远古骷髅领主凭证
 item.voucher_zombie_lord.name=僵尸领主,镜像骷髅凭证
 item.voucher_door.name=僵尸盗贼,地狱苦力怕凭证

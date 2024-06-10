@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ItemFinalFood extends ItemFood {
     public ItemFinalFood(int par1) {
-        super(par1, Material.chicken_soup, 200, 200, true, true, true, "drug_bg");
+        super(par1, Material.chicken_soup, 200, 200, true, true, true, "wan");
         this.setMaxStackSize(64);
         this.setCraftingDifficultyAsComponent(1.0f);
         this.setCreativeTab(CreativeModeTab.tabFood);
@@ -29,7 +29,7 @@ public class ItemFinalFood extends ItemFood {
         if (!par2World.isRemote) {
         par3EntityPlayer.addPotionEffect(new MobEffect(MobEffectList.field_76443_y.id, 36000, 1, false));
 //        par3EntityPlayer.addPotionEffect(new MobEffect(MobEffectList.field_76434_w.id, 6000, 5, false));
-        par3EntityPlayer.addPotionEffect(new MobEffect(MobEffectList.regeneration.id, 36000, 5, false));
+        par3EntityPlayer.addPotionEffect(new MobEffect(MobEffectList.regeneration.id, 36000, 2, false));
         par3EntityPlayer.addPotionEffect(new MobEffect(MobEffectList.resistance.id, 36000, 127, false));
         par3EntityPlayer.addPotionEffect(new MobEffect(MobEffectList.fireResistance.id, 36000, 5, false));
         par3EntityPlayer.setInsulinResistance(par3EntityPlayer.getInsulinResistance() - 12800);
@@ -46,7 +46,7 @@ public class ItemFinalFood extends ItemFood {
             info.add(EnumChatFormat.YELLOW + ("+160000蛋白质"));
             info.add(EnumChatFormat.GREEN + ("+160000植物营养"));
             info.add(ColorText.makeColors("-12800血糖"));
-            info.add(ColorText.makeColors("+30分钟饱和，抗性提升127，生命恢复5，抗火1"));
+            info.add(ColorText.makeColors("+30分钟饱和，抗性提升127，生命恢复2，抗火1"));
             info.add("");
             info.add(ColorText.makeSANIC("贪婪使我强大"));
         }
