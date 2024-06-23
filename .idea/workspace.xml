@@ -9,14 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2238cba8-e7f8-4d79-98e8-ad2de4dc5d34" name="更改" comment="v2.0.0 Update">
+    <list default="true" id="2238cba8-e7f8-4d79-98e8-ad2de4dc5d34" name="更改" comment="fix a bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChangeLogCN.md" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeLogCN.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/block/BlockColorfulWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/block/BlockColorfulWall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntityExchanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntityExchanger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntityGhastLord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntityGhastLord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntitySkeletonShadow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntitySkeletonShadow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntitySpiderQueen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntitySpiderQueen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/util/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/util/Configs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718000628565</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="v2.0.1 Update">
+      <option name="closed" value="true" />
+      <created>1719117395312</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719117395312</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -170,6 +172,8 @@
     <MESSAGE value="v1.6.4 Update" />
     <MESSAGE value="v1.6.5(fix) Update" />
     <MESSAGE value="v2.0.0 Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2.0.0 Update" />
+    <MESSAGE value="v2.0.1 Update" />
+    <MESSAGE value="fix a bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix a bug" />
   </component>
 </project>
