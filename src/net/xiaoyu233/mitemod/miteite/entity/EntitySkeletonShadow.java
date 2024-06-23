@@ -215,7 +215,13 @@ public class EntitySkeletonShadow extends EntitySkeleton {
     }
 
     public EntityDamageResult attackEntityFrom(Damage damage) {
-        boolean can_evade = !damage.isFallDamage() && !damage.isFireDamage() && !damage.isPoison();
+        ItemStack item_stack;
+        DamageSource damage_source = damage.getSource();
+        boolean has_phasedefend = false;
+        if (damage_source != null && (item_stack = damage_source.getItemAttackedWith()) != null && item_stack.hasEnchantment(Enchantment.piercing, true)) {
+            has_phasedefend = true;
+        }
+        boolean can_evade = !damage.isFallDamage() && !has_phasedefend && !damage.isFireDamage() && !damage.isPoison();
         if (can_evade && this.num_evasions > 0) {
             --this.num_evasions;
             if (this.tryTeleportAwayFrom(this.getTarget(), 8.0)) {

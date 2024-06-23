@@ -9,25 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2238cba8-e7f8-4d79-98e8-ad2de4dc5d34" name="更改" comment="v1.6.5(fix) Update">
+    <list default="true" id="2238cba8-e7f8-4d79-98e8-ad2de4dc5d34" name="更改" comment="v2.0.0 Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChangeLogCN.md" beforeDir="false" afterPath="$PROJECT_DIR$/ChangeLogCN.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/minecraft/lang/zh_CN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/minecraft/lang/zh_CN.lang" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/minecraft/textures/items/voucher/voucher_ultimateannihilation.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/minecraft/textures/items/voucher/voucher_ultimateannihilation.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/achievement/Achievements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/achievement/Achievements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/block/BlockColorfulSlab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/block/BlockColorfulSlab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/block/Blocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/block/Blocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntitySkeletonBoss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntitySkeletonBoss.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntityUltimateAnnihilationSkeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntityUltimateAnnihilationSkeleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/events/MITEITEEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/events/MITEITEEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/item/ItemClubMetal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/item/ItemClubMetal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/item/ItemFinalFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/item/ItemFinalFood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/item/ItemInfinitySword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/item/ItemInfinitySword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/item/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/item/Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/block/BlockColorfulWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/block/BlockColorfulWall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntityExchanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntityExchanger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntityGhastLord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntityGhastLord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntitySkeletonShadow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntitySkeletonShadow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntitySpiderQueen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/entity/EntitySpiderQueen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/util/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/util/Configs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/util/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/util/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/util/MonsterUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/xiaoyu233/mitemod/miteite/util/MonsterUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711791417520</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="v2.0.0 Update">
+      <option name="closed" value="true" />
+      <created>1718000628565</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718000628565</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -171,6 +169,7 @@
     <MESSAGE value="v1.6.1 Last Release and v1.6.2 Update" />
     <MESSAGE value="v1.6.4 Update" />
     <MESSAGE value="v1.6.5(fix) Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.6.5(fix) Update" />
+    <MESSAGE value="v2.0.0 Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2.0.0 Update" />
   </component>
 </project>

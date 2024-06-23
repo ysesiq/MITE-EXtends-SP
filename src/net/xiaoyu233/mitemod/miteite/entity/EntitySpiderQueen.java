@@ -14,7 +14,6 @@ public class EntitySpiderQueen extends EntityArachnid {
         this.num_webs = 4;
     }
 
-
     protected String getLivingSound() {
         return "imported.mob.demonspider.say";
     }
@@ -39,12 +38,17 @@ public class EntitySpiderQueen extends EntityArachnid {
         return false;
     }
 
+    @Override
+    public boolean getCanSpawnHere(boolean perform_light_check) {
+        return super.getCanSpawnHere(perform_light_check) && this.worldObj.getDayOfOverworld() >= 10;
+    }
+
     protected void applyEntityAttributes() {
         int day = this.getWorld() != null ? this.getWorld().getDayOfOverworld() : 0;
         super.applyEntityAttributes();
         this.setEntityAttribute(GenericAttributes.maxHealth, 60.0 + (double) day / 3.0);
         this.setEntityAttribute(GenericAttributes.followRange, 96.0);
-        this.setEntityAttribute(GenericAttributes.attackDamage, 25.0 + (double) day / 6.0);
+        this.setEntityAttribute(GenericAttributes.attackDamage, 15.0 + (double) day / 6.0);
         this.setEntityAttribute(GenericAttributes.movementSpeed, 0.92);
     }
     public EntityDamageResult attackEntityAsMob(Entity target) {

@@ -168,6 +168,7 @@ public class Configs {
 //        public static ConfigItem <Boolean> debugGuiScreen = new ConfigItem("debugGuiScreen", true, "是否在DEV的情况下在屏幕左侧显示更多信息");
         public static ConfigItem <Boolean> displayGAUI = new ConfigItem("displayGAUI", true, "是否启用地精坐标器");
         public static ConfigItem <Boolean> superGravel = new ConfigItem("SuperGravel", true, "是否启用超级沙砾爆率(未完成)");
+        public static ConfigItem <Float> dungeonProbability = new ConfigItem("dungeonProbability", 0.1f, "地牢生成概率(不分维度)", 0f,1f);
 
 //        public static ConfigItem <String> md5String = new ConfigItem("md5String", new lh("wensc").a("busy"), "MD5");
 
@@ -308,6 +309,8 @@ public class Configs {
 //        wenscMap.put("debugGuiScreen", wenscConfig.debugGuiScreen);
         wenscMap.put("displayGAUI", wenscConfig.displayGAUI);
         wenscMap.put("superGravel", wenscConfig.superGravel);
+        wenscMap.put("dungeonProbability", wenscConfig.dungeonProbability);
+
 //        wenscMap.put("md5", wenscConfig.md5String);
 
         String filePth = "MITE-EXtends-SP.cfg";

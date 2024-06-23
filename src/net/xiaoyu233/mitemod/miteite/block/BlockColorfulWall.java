@@ -11,7 +11,7 @@ public class BlockColorfulWall extends BlockCobbleWall {
     public BlockColorfulWall(int par1, Block par2Block, int par3) {
         super(par1, par2Block);
         this.setMaxStackSize(64);
-        this.setLightValue(0.7F);
+        this.setLightValue(0.5F);
     }
 
     public boolean isAlwaysReplaceable() {

@@ -7,50 +7,81 @@ import net.xiaoyu233.mitemod.miteite.util.Configs;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
-public class EntityGhastLord extends EntityGhast {
+public class EntityGhastLord extends EntityFlying implements IMonster {
+
+    public int attackCounter;
+    public int courseChangeCooldown;
+    public int prevAttackCounter;
+    public double waypointX;
+    public double waypointY;
+    public double waypointZ;
+    private int aggroCooldown;
+    private int explosionStrength;
+    private Entity targetedEntity;
+    private int spawnCounter;
+    private int spawnSums;
+
     public EntityGhastLord(World par1World) {
         super(par1World);
+        this.setSize(4.0F, 4.0F);
     }
-    @Shadow
-    public int attackCounter;
-    @Shadow
-    public int courseChangeCooldown;
-    @Shadow
-    public int prevAttackCounter;
-    @Shadow
-    public double waypointX;
-    @Shadow
-    public double waypointY;
-    @Shadow
-    public double waypointZ;
-    @Shadow
-    private int aggroCooldown;
-    @Shadow
-    private int explosionStrength;
-    @Shadow
-    private Entity targetedEntity;
 
-    @Overwrite
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         this.explosionStrength = 8;
         super.getEntityAttribute(GenericAttributes.maxHealth).setAttribute(200.0D);
     }
 
-    @Shadow
     public boolean canSpawnInShallowWater() {
         return false;
     }
 
-    @Overwrite
     public boolean getCanSpawnHere(boolean perform_light_check) {
         return this.rand.nextInt(20) == 0 && super.getCanSpawnHere(perform_light_check);
     }
 
-    @Shadow
     private boolean isCourseTraversable(double par1, double par3, double par5, double par7) {
         return false;
     }
+
+    public boolean bJ() {
+        return this.dataWatcher.getWatchableObjectByte(16) != 0;
+    }
+
+    protected void entityInit() {
+        super.entityInit();
+        this.dataWatcher.addObject(16, (byte)0);
+    }
+
+    protected String getLivingSound() {
+        return "mob.ghast.moan";
+    }
+
+    protected String getHurtSound() {
+        return "mob.ghast.scream";
+    }
+
+    protected String getDeathSound() {
+        return "mob.ghast.death";
+    }
+
+    public int getMaxSpawnedInChunk() {
+        return 1;
+    }
+
+    public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound) {
+        super.writeEntityToNBT(par1NBTTagCompound);
+        par1NBTTagCompound.setInteger("ExplosionPower", this.explosionStrength);
+    }
+
+    public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound) {
+        super.readEntityFromNBT(par1NBTTagCompound);
+        if (par1NBTTagCompound.hasKey("ExplosionPower")) {
+            this.explosionStrength = par1NBTTagCompound.getInteger("ExplosionPower");
+        }
+
+    }
+
     @Override
     public EntityDamageResult attackEntityFrom(Damage damage) {
         if (damage.isFireballFromPlayer()) {
@@ -64,7 +95,6 @@ public class EntityGhastLord extends EntityGhast {
         }
     }
 
-    @Overwrite
     protected void updateEntityActionState() {
         if (!super.worldObj.isRemote && super.worldObj.difficultySetting == 0) {
             super.setDead();
@@ -158,8 +188,33 @@ public class EntityGhastLord extends EntityGhast {
         }
 
     }
+
+    @Override
+    public void onUpdate() {
+        super.onUpdate();
+        if (!this.getWorld().isRemote) {
+            EntityLiving target;
+            if ((target = this.getAttackTarget()) instanceof EntityPlayer) {
+                if (this.spawnSums < 4) {
+                    if (this.spawnCounter < 200) {
+                        ++this.spawnCounter;
+                    } else {
+                        EntityGhast ghast = new EntityGhast(this.worldObj);
+                        ghast.setPosition(this.posX, this.posY, this.posZ);
+                        ghast.refreshDespawnCounter(-9600);
+                        this.worldObj.spawnEntityInWorld((Entity) ghast);
+                        ghast.onSpawnWithEgg(null);
+                        ghast.setAttackTarget(this.getTarget());
+                        ghast.entityFX(EnumEntityFX.summoned);
+                        this.spawnCounter = 0;
+                        ++this.spawnSums;
+                    }
+                }
+            }
+        }
+    }
     protected void dropFewItems(boolean recently_hit_by_player, DamageSource damage_source) {
-        if (recently_hit_by_player){
+        if (recently_hit_by_player) {
             this.dropItem(Items.voucherGhast);
             int day = this.getWorld().getDayOfOverworld();
             int fancyRed_count = 5 + (day / 32);
@@ -180,12 +235,33 @@ public class EntityGhastLord extends EntityGhast {
             this.dropItem(Item.gunpowder.itemID, 1);
         }
     }
+
+    @Override
+    public boolean isImmuneToExplosion() {
+        return true;
+    }
+
+    @Override
+    public boolean isHarmedByLava() {
+        return false;
+    }
+
+    @Override
+    public boolean isHarmedByFire() {
+        return false;
+    }
+
+    @Override
+    public boolean canCatchFire() {
+        return false;
+    }
+
     protected float getSoundVolume(String sound) {
-        return 20.0F;
+        return 40.0F;
     }
 
     public int getExperienceValue() {
-        return super.getExperienceValue() * 6;
+        return super.getExperienceValue() * 10;
     }
 
 }
